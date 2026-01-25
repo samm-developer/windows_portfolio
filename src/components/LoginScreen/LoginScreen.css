@@ -1,0 +1,413 @@
+.login-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #0c1a4a 0%,
+    #0c1a4a 8%,
+    #235adc 8%,
+    #235adc 90%,
+    #0a246a 90%,
+    #0a246a 100%
+  );
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scanlines effect */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 1px,
+    rgba(0, 0, 0, 0.03) 1px,
+    rgba(0, 0, 0, 0.03) 2px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Main content */
+.login-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left side */
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 60px;
+}
+
+.xp-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-left: 60px;
+}
+
+/* Windows Flag Logo */
+.windows-flag {
+  width: 100px;
+  height: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 4px;
+  transform: perspective(200px) rotateY(-10deg) skewY(-2deg);
+  margin-bottom: 15px;
+}
+
+.flag-piece {
+  border-radius: 3px;
+  animation: flagWave 3s ease-in-out infinite;
+}
+
+.flag-piece.red {
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a25 100%);
+  animation-delay: 0s;
+}
+
+.flag-piece.green {
+  background: linear-gradient(135deg, #7cb342 0%, #5a9a20 100%);
+  animation-delay: 0.1s;
+}
+
+.flag-piece.blue {
+  background: linear-gradient(135deg, #42a5f5 0%, #2196f3 100%);
+  animation-delay: 0.2s;
+}
+
+.flag-piece.yellow {
+  background: linear-gradient(135deg, #ffca28 0%, #ffc107 100%);
+  animation-delay: 0.3s;
+}
+
+@keyframes flagWave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Logo text */
+.logo-text {
+  display: flex;
+  align-items: baseline;
+  font-family: 'Franklin Gothic Medium', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+
+.mitch {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+.ivin {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+}
+
+.xp {
+  color: #ffcc00;
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+  margin-left: 2px;
+  position: relative;
+  top: -15px;
+}
+
+.visual-designer-subtitle {
+  color: #ffcc00;
+  font-family: 'Franklin Gothic Medium', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: -5px;
+  letter-spacing: 1px;
+}
+
+.login-instruction {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Franklin Gothic Medium', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-left: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Center divider */
+.login-divider {
+  width: 2px;
+  height: 300px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.15) 80%,
+    transparent 100%
+  );
+  margin: 0 40px;
+}
+
+/* Right side - User profile */
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 60px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 15px 25px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.user-profile:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user-profile:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 5px;
+  padding: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.avatar-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.user-name {
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.user-role {
+  color: #ffcc00;
+  font-family: 'Franklin Gothic Medium', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Bottom taskbar */
+.login-taskbar {
+  height: 80px;
+  background: linear-gradient(
+    180deg,
+    #0a246a 0%,
+    #0a246a 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.restart-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.restart-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.restart-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.restart-icon {
+  width: 32px;
+  height: 32px;
+  background: #3c8527;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.restart-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.restart-button span {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+.login-footer-text {
+  text-align: right;
+}
+
+.login-footer-text p {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #235adc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.windows-loading {
+  width: 200px;
+  height: 20px;
+  background: #1a47a8;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 16px;
+  width: 40px;
+  background: linear-gradient(90deg, #3d78e1, #6ba3ff, #3d78e1);
+  border-radius: 2px;
+  animation: loadingSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingSlide {
+  0% {
+    left: 2px;
+  }
+  50% {
+    left: calc(100% - 42px);
+  }
+  100% {
+    left: 2px;
+  }
+}
+
+.loading-spinner p {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .login-content {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  
+  .login-left {
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .xp-logo-container {
+    margin-left: 0;
+  }
+  
+  .login-instruction {
+    margin-left: 0;
+  }
+  
+  .login-divider {
+    width: 200px;
+    height: 2px;
+    margin: 30px 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 100%
+    );
+  }
+  
+  .login-right {
+    padding-left: 0;
+    justify-content: center;
+  }
+}

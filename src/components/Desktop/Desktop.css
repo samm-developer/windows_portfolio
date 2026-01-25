@@ -1,0 +1,132 @@
+.desktop {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.desktop-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Classic Windows XP Bliss background gradient approximation */
+  background: linear-gradient(
+    180deg,
+    #245edc 0%,
+    #3d7ee6 30%,
+    #5a9af0 50%,
+    #7cb8f5 70%,
+    #4ca650 75%,
+    #3d9141 100%
+  );
+  z-index: 0;
+}
+
+/* Add a subtle cloud/hill overlay */
+.desktop-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: 
+    radial-gradient(ellipse 200% 100% at 50% 100%, transparent 70%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+/* Green hills at bottom */
+.desktop-background::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: 
+    radial-gradient(ellipse 150% 100% at 30% 0%, #5cb85c 0%, transparent 50%),
+    radial-gradient(ellipse 120% 80% at 70% 20%, #4ca64c 0%, transparent 60%),
+    radial-gradient(ellipse 180% 100% at 50% 0%, #3d9141 0%, transparent 40%);
+}
+
+.desktop-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+/* Welcome message popup */
+.welcome-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+}
+
+.welcome-content {
+  background: linear-gradient(180deg, #fff 0%, #ece9d8 100%);
+  border: 2px solid #0054e3;
+  border-radius: 8px;
+  padding: 30px 40px;
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.1),
+    4px 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+}
+
+.welcome-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(180deg, #0054e3 0%, #0095ff 100%);
+  border-radius: 6px 6px 0 0;
+  margin: -30px -40px 0;
+  padding: 0 40px;
+}
+
+.welcome-content h2 {
+  color: #003399;
+  font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.welcome-content p {
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.welcome-content button {
+  background: linear-gradient(180deg, #fff 0%, #ece9d8 100%);
+  border: 1px solid #003399;
+  border-radius: 3px;
+  padding: 8px 30px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 13px;
+  color: #003399;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.welcome-content button:hover {
+  background: linear-gradient(180deg, #e8f4ff 0%, #cde4ff 100%);
+}
+
+.welcome-content button:active {
+  background: linear-gradient(180deg, #cde4ff 0%, #b8d4ff 100%);
+}

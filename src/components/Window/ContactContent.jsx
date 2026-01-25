@@ -1,0 +1,176 @@
+import { useState } from 'react'
+import './ContentStyles.css'
+
+const ContactContent = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Simulate form submission
+    setSubmitted(true)
+    setTimeout(() => {
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      setSubmitted(false)
+    }, 3000)
+  }
+
+  const contactInfo = [
+    {
+      icon: '📧',
+      label: 'Email',
+      value: 'mitch@example.com',
+      link: 'mailto:mitch@example.com'
+    },
+    {
+      icon: '📍',
+      label: 'Location',
+      value: 'San Francisco, CA',
+      link: null
+    },
+    {
+      icon: '💼',
+      label: 'LinkedIn',
+      value: 'linkedin.com/in/mitchivin',
+      link: 'https://linkedin.com'
+    },
+    {
+      icon: '🐦',
+      label: 'Twitter',
+      value: '@mitchivin',
+      link: 'https://twitter.com'
+    }
+  ]
+
+  return (
+    <div className="content-wrapper contact-content">
+      {/* Header */}
+      <div className="contact-header">
+        <h1>Get In Touch</h1>
+        <p>Have a project in mind or just want to say hello? I'd love to hear from you!</p>
+      </div>
+
+      <div className="contact-body">
+        {/* Contact Form */}
+        <div className="contact-form-section">
+          <h3>Send a Message</h3>
+          {submitted ? (
+            <div className="success-message">
+              <span className="success-icon">✅</span>
+              <h4>Message Sent!</h4>
+              <p>Thank you for reaching out. I'll get back to you soon.</p>
+            </div>
+          ) : (
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="What's this about?"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell me about your project..."
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" className="submit-button">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                  <path d="M2 12 L22 2 L18 22 L12 14 L22 2" stroke="currentColor" strokeWidth="2" fill="none"/>
+                </svg>
+                Send Message
+              </button>
+            </form>
+          )}
+        </div>
+
+        {/* Contact Info */}
+        <div className="contact-info-section">
+          <h3>Contact Info</h3>
+          <div className="contact-cards">
+            {contactInfo.map((item, index) => (
+              <div key={index} className="contact-card">
+                <span className="contact-card-icon">{item.icon}</span>
+                <div className="contact-card-content">
+                  <span className="contact-card-label">{item.label}</span>
+                  {item.link ? (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="contact-card-value">
+                      {item.value}
+                    </a>
+                  ) : (
+                    <span className="contact-card-value">{item.value}</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Availability */}
+          <div className="availability-section">
+            <h3>Availability</h3>
+            <div className="availability-status">
+              <span className="status-dot available"></span>
+              <span>Currently available for freelance work</span>
+            </div>
+            <p className="availability-note">
+              I typically respond within 24-48 hours. For urgent inquiries, 
+              feel free to reach out via LinkedIn.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ContactContent
