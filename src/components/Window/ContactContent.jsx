@@ -55,7 +55,7 @@ const ContactContent = () => {
     {
       icon: '💻',
       label: 'GitHub',
-      value: 'github.com/samm-developer',
+      value: 'github.com/Sam7777M',
       link: 'https://github.com/Sam7777M'
     },
   ]
@@ -161,18 +161,6 @@ const ContactContent = () => {
             ))}
           </div>
 
-          {/* Availability */}
-          <div className="availability-section">
-            <h3>Availability</h3>
-            <div className="availability-status">
-              <span className="status-dot available"></span>
-              <span>Currently available for freelance work</span>
-            </div>
-            <p className="availability-note">
-              I typically respond within 24-48 hours. For urgent inquiries, 
-              feel free to reach out via LinkedIn.
-            </p>
-          </div>
         </div>
       </div>
     </div>
