@@ -45,7 +45,7 @@ const ResumeContent = () => {
       {/* Header */}
       <div className="resume-header">
         <div className="resume-title">
-          <h1>Mitch Ivin</h1>
+          <h1>Sam Developer</h1>
           <h2>Visual Designer</h2>
         </div>
         <div className="resume-contact">

@@ -21,15 +21,15 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <div className="flag-piece yellow"></div>
             </div>
             <div className="logo-text">
-              <span className="mitch">Mitch</span>
-              <span className="ivin">Ivin</span>
+              <span className="mitch">Sam</span>
+              <span className="ivin">Developer</span>
               <span className="xp">XP</span>
             </div>
             <div className="visual-designer-subtitle">Visual Designer</div>
           </div>
           
           <p className="login-instruction">
-            To begin, click on Mitch Ivin to log in
+            To begin, click on Sam Developer to log in
           </p>
         </div>
         
@@ -77,7 +77,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               </div>
             </div>
             <div className="user-info">
-              <span className="user-name">Mitch Ivin</span>
+              <span className="user-name">Sam Developer</span>
               <span className="user-role">Visual Designer</span>
             </div>
           </button>
@@ -95,7 +95,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <rect x="13" y="13" width="7" height="7" fill="#ffca28"/>
             </svg>
           </div>
-          <span>Restart MitchIvin XP</span>
+          <span>Restart Sam Developer XP</span>
         </button>
         
         <div className="login-footer-text">

@@ -36,7 +36,7 @@ const AboutMeContent = () => {
             </svg>
           </div>
           <div className="profile-info">
-            <h1>Mitch Ivin</h1>
+            <h1>Sam Developer</h1>
             <h2>Visual Designer</h2>
             <p className="tagline">Crafting digital experiences with purpose and precision.</p>
           </div>

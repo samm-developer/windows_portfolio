@@ -4,7 +4,7 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
   if (!isOpen) return null
 
   const menuItems = [
-    { id: 'about', title: 'About Me', description: 'Learn about Mitch Ivin' },
+    { id: 'about', title: 'About Me', description: 'Learn about Sam Developer' },
     { id: 'resume', title: 'My Resume', description: 'View professional experience' },
     { id: 'projects', title: 'My Projects', description: 'Browse portfolio work' },
     { id: 'contact', title: 'Contact Me', description: 'Get in touch' },
@@ -67,7 +67,7 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
             <ellipse cx="20" cy="36" rx="12" ry="10" fill="#4a90d9"/>
           </svg>
         </div>
-        <span className="user-name-header">Mitch Ivin</span>
+        <span className="user-name-header">Sam Developer</span>
       </div>
 
       {/* Content */}
