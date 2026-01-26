@@ -171,7 +171,7 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
       {showWelcome && (
         <div className="welcome-message">
           <div className="welcome-content">
-            <h2>Welcome to Sam Developer XP!</h2>
+            <h2>Welcome to SAM Developer XP!</h2>
             <p>Double-click the icons on the desktop to explore my portfolio.</p>
             <button onClick={dismissWelcome}>Got it!</button>
           </div>

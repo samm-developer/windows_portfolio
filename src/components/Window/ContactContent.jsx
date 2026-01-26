@@ -31,27 +31,33 @@ const ContactContent = () => {
     {
       icon: '📧',
       label: 'Email',
-      value: 'mitch@example.com',
-      link: 'mailto:mitch@example.com'
+      value: 'devsamm72@gmail.com',
+      link: 'mailto:devsamm72@gmail.com'
+    },
+    {
+      icon: '📱',
+      label: 'Phone',
+      value: '9452392955',
+      link: 'tel:9452392955'
     },
     {
       icon: '📍',
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'India',
       link: null
     },
     {
-      icon: '💼',
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/mitchivin',
-      link: 'https://linkedin.com'
+      icon: '💻',
+      label: 'GitHub',
+      value: 'github.com/samm-developer',
+      link: 'https://github.com/samm-developer'
     },
     {
-      icon: '🐦',
-      label: 'Twitter',
-      value: '@mitchivin',
-      link: 'https://twitter.com'
-    }
+      icon: '💻',
+      label: 'GitHub',
+      value: 'github.com/samm-developer',
+      link: 'https://github.com/Sam7777M'
+    },
   ]
 
   return (

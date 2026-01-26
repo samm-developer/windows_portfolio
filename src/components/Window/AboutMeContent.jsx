@@ -36,9 +36,9 @@ const AboutMeContent = () => {
             </svg>
           </div>
           <div className="profile-info">
-            <h1>Sam Developer</h1>
-            <h2>Software Developer</h2>
-            <p className="tagline">Crafting digital experiences with purpose and precision.</p>
+            <h1>SAM</h1>
+            <h2>Senior Software Developer (SDE-2)</h2>
+            <p className="tagline">Building scalable, high-performance web applications with React, Next.js, Node.js, and AWS.</p>
           </div>
         </div>
       </div>
@@ -53,34 +53,34 @@ const AboutMeContent = () => {
         </section>
 
         <section className="about-section">
-          <h3>🎨 What I Do</h3>
+          <h3>🎯 Key Achievements</h3>
           <ul className="skills-list">
             <li>
-              <span className="skill-icon">🖥️</span>
+              <span className="skill-icon">🏆</span>
               <div>
-                <strong>UI/UX Design</strong>
-                <p>Creating user-centered designs that delight and engage</p>
+                <strong>Smart India Hackathon</strong>
+                <p>Winner (2025) and Runner up (2024) - Designed smart truck routing solution optimizing routes by goods availability, improving vehicle utilization by 30%</p>
               </div>
             </li>
             <li>
-              <span className="skill-icon">🎭</span>
+              <span className="skill-icon">🥈</span>
               <div>
-                <strong>Brand Identity</strong>
-                <p>Developing cohesive visual systems and brand guidelines</p>
+                <strong>GFG HackerFest</strong>
+                <p>Secured 2nd rank - Designed automatic counselling system using React Native technology (EasyED app available on PlayStore)</p>
               </div>
             </li>
             <li>
-              <span className="skill-icon">🌐</span>
+              <span className="skill-icon">💻</span>
               <div>
-                <strong>Web Design</strong>
-                <p>Crafting responsive, modern websites that stand out</p>
+                <strong>DSA Expertise</strong>
+                <p>Solved 1000+ DSA problems on LeetCode and GFG, strengthening logic building and algorithmic thinking</p>
               </div>
             </li>
             <li>
-              <span className="skill-icon">✨</span>
+              <span className="skill-icon">⚡</span>
               <div>
-                <strong>Motion Design</strong>
-                <p>Bringing interfaces to life with thoughtful animations</p>
+                <strong>Performance Optimization</strong>
+                <p>Optimized React rendering performance up to 30%, improved initial page load time up to 40%, and enhanced API response times</p>
               </div>
             </li>
           </ul>
@@ -89,23 +89,32 @@ const AboutMeContent = () => {
         <section className="about-section">
           <h3>🛠️ Tools & Technologies</h3>
           <div className="tools-grid">
-            <div className="tool-item">Figma</div>
-            <div className="tool-item">Sketch</div>
-            <div className="tool-item">Adobe XD</div>
-            <div className="tool-item">Photoshop</div>
-            <div className="tool-item">Illustrator</div>
-            <div className="tool-item">After Effects</div>
-            <div className="tool-item">HTML/CSS</div>
-            <div className="tool-item">React</div>
+            <div className="tool-item">React.js</div>
+            <div className="tool-item">Next.js</div>
+            <div className="tool-item">Node.js</div>
+            <div className="tool-item">TypeScript</div>
+            <div className="tool-item">Redux</div>
+            <div className="tool-item">GraphQL</div>
+            <div className="tool-item">MongoDB</div>
+            <div className="tool-item">PostgreSQL</div>
+            <div className="tool-item">Redis</div>
+            <div className="tool-item">AWS</div>
+            <div className="tool-item">Docker</div>
+            <div className="tool-item">RabbitMQ</div>
+            <div className="tool-item">Socket.io</div>
+            <div className="tool-item">Micro Frontend</div>
+            <div className="tool-item">React Native</div>
+            <div className="tool-item">Material UI</div>
           </div>
         </section>
 
         <section className="about-section">
           <h3>💡 Philosophy</h3>
           <blockquote>
-            "Every pixel matters. Great design is invisible – it just works. 
-            My goal is to create experiences that feel natural, intuitive, 
-            and bring joy to users."
+            "Building scalable systems that perform under pressure. Great code is maintainable, 
+            efficient, and solves real business problems. My goal is to create robust, 
+            fault-tolerant applications that deliver exceptional user experiences while 
+            ensuring long-term reliability and scalability."
           </blockquote>
         </section>
       </div>

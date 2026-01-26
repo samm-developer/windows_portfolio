@@ -4,39 +4,44 @@ const ResumeContent = () => {
   const experiences = [
     {
       title: 'Senior Software Developer',
-      company: 'Tech Innovations Inc.',
-      period: '2021 - Present',
-      description: 'Leading design systems and visual direction for flagship products. Collaborating with cross-functional teams to deliver exceptional user experiences.',
-      highlights: ['Design System Architecture', 'Team Leadership', 'Product Strategy']
+      company: 'Bounteous and Accolite',
+      period: '2025 - Present',
+      location: 'India',
+      description: 'Optimised React rendering performance up to 30% by reducing unnecessary re-renders using memoization techniques, efficient state management using redux, pagination on api for infinite scroll, and component-level optimisation. Improved initial page load time up to 40% by implementing code splitting, lazy loading, and asset optimization. Improved API response times by refactoring async workflows, optimising queries and implementing indexing. Designed scalable frontend–backend system architecture using Next.js SSR, Redis caching, and optimised API layers. Implemented Socket.IO-based real-time workflows for customer support. Mentored junior developers through code reviews and technical guidance.',
+      highlights: ['React Performance', 'Next.js SSR', 'Redis Caching', 'Socket.IO', 'Mentoring']
     },
     {
-      title: 'UI/UX Designer',
-      company: 'Creative Agency Co.',
-      period: '2018 - 2021',
-      description: 'Designed digital experiences for diverse clients across fintech, healthcare, and e-commerce sectors.',
-      highlights: ['Client Projects', 'User Research', 'Prototyping']
+      title: 'Software Developer',
+      company: 'Saksoft',
+      period: '2022 - 2025',
+      location: 'India',
+      description: 'Worked on OSLO v4 (react.js, javascript) and OSLO v5 (next.js, typescript, Redis, Redux) with Express.js, Node.js, MongoDB. Optimised API call in OSLO v5 using SSR by 40%, cutting load time by 30% compared to OSLO v4. Designed and implemented micro-frontend architecture in OSLO v6 using modular React applications. Built optimised search suggestion using debouncing, throttling and redux-toolkit, optimising search latency by 60%. Built RiskWrite and IMS from scratch supporting 1M+ users. Built IFFCO (Govt e-com) with React, Node, Express, GraphQL, AWS. Integrated PayU, AmazonPay, and JusPay payment gateways. Led development of Redington Gulf E-COM project. Integrated RabbitMQ for decoupled communication across microservices. Mentored 4 junior developers.',
+      highlights: ['Micro Frontend', 'Payment Gateways', 'GraphQL', 'RabbitMQ', 'E-Commerce']
     },
     {
-      title: 'Junior Designer',
-      company: 'StartUp Studio',
-      period: '2016 - 2018',
-      description: 'Started career creating marketing materials and web designs for early-stage startups.',
-      highlights: ['Brand Design', 'Web Development', 'Marketing']
+      title: 'Software Development Intern',
+      company: 'BingePrime',
+      period: '05/2022 - 11/2022',
+      location: 'India',
+      description: 'Worked on movie streaming website BingePrime. Implemented Razorpay payment gateway for subscription based model. Reduced javascript execution time by utilizing pre-loading, pre-caching, and lazy loading of assets. Developed a customised movie recommendation system.',
+      highlights: ['Razorpay', 'Performance Optimization', 'Recommendation System']
+    },
+    {
+      title: 'Web Developer Intern',
+      company: 'LetsGrowMore',
+      period: '09/2021 - 03/2022',
+      location: 'India',
+      description: 'Implemented secure login using access and refresh tokens and cache for blocking used tokens after logout. Handled authorized routing for subscriber-only routes with MongoDB aggregation pipelines. Designed various secure login/signup methods including auto login or OAuth login via Google and Facebook. Managed PhonePe Payment gateway and hosting on AWS.',
+      highlights: ['OAuth', 'MongoDB', 'AWS', 'Security']
     }
   ]
 
   const education = [
     {
-      degree: 'Master of Design',
-      school: 'California Institute of Arts',
-      year: '2016',
-      focus: 'Interactive Media'
-    },
-    {
-      degree: 'Bachelor of Fine Arts',
-      school: 'Rhode Island School of Design',
-      year: '2014',
-      focus: 'Graphic Design'
+      degree: 'B.Tech (Computer Science and Engineering)',
+      school: 'Bundelkhand Institute of Engineering and Technology, Jhansi',
+      year: '4 years',
+      focus: 'Percentage: 77%'
     }
   ]
 
@@ -45,13 +50,14 @@ const ResumeContent = () => {
       {/* Header */}
       <div className="resume-header">
         <div className="resume-title">
-          <h1>Sam Developer</h1>
-          <h2>Software Developer</h2>
+          <h1>SAM</h1>
+          <h2>Senior Software Developer (SDE-2)</h2>
         </div>
         <div className="resume-contact">
-          <span>📧 mitch@example.com</span>
-          <span>📍 San Francisco, CA</span>
-          <span>🔗 linkedin.com/in/mitchivin</span>
+          <span>📧 devsamm72@gmail.com</span>
+          <span>📱 9452392955</span>
+          <span>🔗 github.com/samm-developer</span>
+          <span>📍 India</span>
         </div>
       </div>
 
@@ -64,7 +70,7 @@ const ResumeContent = () => {
               <div className="experience-header">
                 <div className="experience-title">
                   <h4>{exp.title}</h4>
-                  <span className="company">{exp.company}</span>
+                  <span className="company">{exp.company} {exp.location ? `• ${exp.location}` : ''}</span>
                 </div>
                 <span className="period">{exp.period}</span>
               </div>
@@ -101,45 +107,71 @@ const ResumeContent = () => {
         <h3>🛠️ Skills</h3>
         <div className="skills-container">
           <div className="skill-category">
-            <h4>Design</h4>
-            <div className="skill-bars">
-              <div className="skill-bar">
-                <span>UI Design</span>
-                <div className="bar"><div className="fill" style={{ width: '95%' }}></div></div>
-              </div>
-              <div className="skill-bar">
-                <span>UX Design</span>
-                <div className="bar"><div className="fill" style={{ width: '90%' }}></div></div>
-              </div>
-              <div className="skill-bar">
-                <span>Visual Design</span>
-                <div className="bar"><div className="fill" style={{ width: '95%' }}></div></div>
-              </div>
-              <div className="skill-bar">
-                <span>Motion Design</span>
-                <div className="bar"><div className="fill" style={{ width: '80%' }}></div></div>
-              </div>
+            <h4>Frontend Technologies</h4>
+            <div className="skill-tags">
+              <span className="skill-tag">React.js</span>
+              <span className="skill-tag">Next.js</span>
+              <span className="skill-tag">Micro Frontend</span>
+              <span className="skill-tag">React-Native</span>
+              <span className="skill-tag">Redux</span>
+              <span className="skill-tag">Payment-Gateway</span>
+              <span className="skill-tag">SSR</span>
+              <span className="skill-tag">CSR</span>
+              <span className="skill-tag">Material UI</span>
+              <span className="skill-tag">Tailwind CSS</span>
+              <span className="skill-tag">React Hook</span>
             </div>
           </div>
           <div className="skill-category">
-            <h4>Tools</h4>
-            <div className="skill-bars">
-              <div className="skill-bar">
-                <span>Figma</span>
-                <div className="bar"><div className="fill" style={{ width: '95%' }}></div></div>
-              </div>
-              <div className="skill-bar">
-                <span>Adobe Suite</span>
-                <div className="bar"><div className="fill" style={{ width: '90%' }}></div></div>
-              </div>
-              <div className="skill-bar">
-                <span>Prototyping</span>
-                <div className="bar"><div className="fill" style={{ width: '85%' }}></div></div>
-              </div>
-              <div className="skill-bar">
-                <span>HTML/CSS</span>
-                <div className="bar"><div className="fill" style={{ width: '75%' }}></div></div>
-              </div>
+            <h4>Backend Technology</h4>
+            <div className="skill-tags">
+              <span className="skill-tag">Node.js</span>
+              <span className="skill-tag">Micro Services</span>
+              <span className="skill-tag">GraphQL</span>
+              <span className="skill-tag">RabbitMQ</span>
+              <span className="skill-tag">Redis</span>
+              <span className="skill-tag">Express.js</span>
+              <span className="skill-tag">GTM</span>
+              <span className="skill-tag">Google Analytics</span>
+              <span className="skill-tag">SAP</span>
+              <span className="skill-tag">REST API</span>
+              <span className="skill-tag">Caching</span>
+              <span className="skill-tag">Socket.io</span>
+            </div>
+          </div>
+          <div className="skill-category">
+            <h4>DevOps</h4>
+            <div className="skill-tags">
+              <span className="skill-tag">AWS</span>
+              <span className="skill-tag">EC2</span>
+              <span className="skill-tag">S3</span>
+              <span className="skill-tag">Docker</span>
+              <span className="skill-tag">Jenkins</span>
+              <span className="skill-tag">Lambda</span>
+              <span className="skill-tag">Putty</span>
+              <span className="skill-tag">CI/CD</span>
+            </div>
+          </div>
+          <div className="skill-category">
+            <h4>Languages</h4>
+            <div className="skill-tags">
+              <span className="skill-tag">JavaScript</span>
+              <span className="skill-tag">TypeScript</span>
+              <span className="skill-tag">Python</span>
+              <span className="skill-tag">C</span>
+              <span className="skill-tag">C++</span>
+            </div>
+          </div>
+          <div className="skill-category">
+            <h4>Database</h4>
+            <div className="skill-tags">
+              <span className="skill-tag">MongoDB</span>
+              <span className="skill-tag">Postgres</span>
+              <span className="skill-tag">MySQL</span>
+              <span className="skill-tag">Query Optimisation</span>
+              <span className="skill-tag">Indexing</span>
+              <span className="skill-tag">Schema Design</span>
+              <span className="skill-tag">ACID</span>
             </div>
           </div>
         </div>

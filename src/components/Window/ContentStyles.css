@@ -326,6 +326,22 @@ blockquote {
   transition: width 0.5s ease;
 }
 
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  font-size: 12px;
+  padding: 5px 12px;
+  background: linear-gradient(180deg, #e8f4ff 0%, #cde4ff 100%);
+  border: 1px solid #b0d4ff;
+  border-radius: 15px;
+  color: #003399;
+  font-weight: 500;
+}
+
 .resume-actions {
   display: flex;
   justify-content: center;
@@ -479,9 +495,14 @@ blockquote {
   transition: all 0.2s ease;
 }
 
-.project-view-btn:hover {
+.project-view-btn:hover:not(:disabled) {
   background: linear-gradient(180deg, #e8f4ff 0%, #cde4ff 100%);
   color: #003399;
+}
+
+.project-view-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .projects-stats {

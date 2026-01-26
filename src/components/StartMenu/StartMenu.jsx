@@ -4,7 +4,7 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
   if (!isOpen) return null
 
   const menuItems = [
-    { id: 'about', title: 'About Me', description: 'Learn about Sam Developer' },
+    { id: 'about', title: 'About Me', description: 'Learn more about SAM' },
     { id: 'resume', title: 'My Resume', description: 'View professional experience' },
     { id: 'projects', title: 'My Projects', description: 'Browse portfolio work' },
     { id: 'contact', title: 'Contact Me', description: 'Get in touch' },
@@ -67,7 +67,7 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
             <ellipse cx="20" cy="36" rx="12" ry="10" fill="#4a90d9"/>
           </svg>
         </div>
-        <span className="user-name-header">Sam Developer</span>
+        <span className="user-name-header">SAM</span>
       </div>
 
       {/* Content */}
@@ -115,7 +115,7 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
             LinkedIn
           </a>
           <a 
-            href="https://github.com" 
+            href="https://github.com/samm-developer" 
             target="_blank" 
             rel="noopener noreferrer"
             className="menu-link"
