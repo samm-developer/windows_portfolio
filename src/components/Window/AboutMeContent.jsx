@@ -37,7 +37,7 @@ const AboutMeContent = () => {
           </div>
           <div className="profile-info">
             <h1>Sam Developer</h1>
-            <h2>Visual Designer</h2>
+            <h2>Software Developer</h2>
             <p className="tagline">Crafting digital experiences with purpose and precision.</p>
           </div>
         </div>
@@ -48,10 +48,7 @@ const AboutMeContent = () => {
         <section className="about-section">
           <h3>👋 Hello!</h3>
           <p>
-            I'm a visual designer passionate about creating intuitive, beautiful, and 
-            functional digital experiences. With a keen eye for detail and a love for 
-            nostalgic interfaces (like this Windows XP theme!), I bring creativity and 
-            technical expertise to every project.
+            I’m a Software Developer focused on building clean, scalable, and user-centric applications. I combine strong engineering fundamentals with a sharp eye for detail to deliver reliable and maintainable solutions. With a passion for intuitive UX and a fondness for nostalgic interfaces (like classic Windows XP themes), I enjoy blending thoughtful design with solid technical execution to create software that feels both functional and delightful.
           </p>
         </section>
 

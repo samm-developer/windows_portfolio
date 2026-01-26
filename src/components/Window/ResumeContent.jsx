@@ -3,7 +3,7 @@ import './ContentStyles.css'
 const ResumeContent = () => {
   const experiences = [
     {
-      title: 'Senior Visual Designer',
+      title: 'Senior Software Developer',
       company: 'Tech Innovations Inc.',
       period: '2021 - Present',
       description: 'Leading design systems and visual direction for flagship products. Collaborating with cross-functional teams to deliver exceptional user experiences.',
@@ -46,7 +46,7 @@ const ResumeContent = () => {
       <div className="resume-header">
         <div className="resume-title">
           <h1>Sam Developer</h1>
-          <h2>Visual Designer</h2>
+          <h2>Software Developer</h2>
         </div>
         <div className="resume-contact">
           <span>📧 mitch@example.com</span>

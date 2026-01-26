@@ -25,7 +25,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <span className="ivin">Developer</span>
               <span className="xp">XP</span>
             </div>
-            <div className="visual-designer-subtitle">Visual Designer</div>
+            <div className="visual-designer-subtitle">Software Developer</div>
           </div>
           
           <p className="login-instruction">
@@ -78,7 +78,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
             </div>
             <div className="user-info">
               <span className="user-name">Sam Developer</span>
-              <span className="user-role">Visual Designer</span>
+              <span className="user-role">Software Developer</span>
             </div>
           </button>
         </div>
