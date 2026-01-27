@@ -114,6 +114,18 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
             </svg>
             LinkedIn
           </a>
+          <a
+            href="https://github.com/Sam7777Mssss" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="menu-link"
+          >
+            <svg viewBox="0 0 24 24" className="link-icon">
+              <circle cx="12" cy="12" r="10" fill="#333"/>
+              <path d="M12 2 C6.5 2 2 6.5 2 12 C2 16.5 5 20 9 21 L9 18 C7 18.5 6.5 17 6.5 17 C6 16 5.5 15.5 5.5 15.5 C4.5 15 5.5 15 5.5 15 C6.5 15 7 16 7 16 C8 17.5 9.5 17 10 16.5 C10 16 10.5 15.5 10.5 15 C8 14.5 5 13.5 5 10 C5 9 5.5 8 6 7.5 C6 7 5.5 6 6 5 C6 5 7 5 8.5 6 C9 6 10 5.5 12 5.5 C14 5.5 15 6 15.5 6 C17 5 18 5 18 5 C18.5 6 18 7 18 7.5 C18.5 8 19 9 19 10 C19 13.5 16 14.5 13.5 15 C14 15.5 14 16 14 17 L14 21 C18 20 22 16.5 22 12 C22 6.5 17.5 2 12 2" fill="#fff"/>
+            </svg>
+            GitHub
+          </a>        
           <a 
             href="https://github.com/samm-developer" 
             target="_blank" 

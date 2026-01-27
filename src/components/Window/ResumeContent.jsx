@@ -57,6 +57,7 @@ const ResumeContent = () => {
           <span>📧 devsamm72@gmail.com</span>
           <span>📱 9452392955</span>
           <span>🔗 github.com/samm-developer</span>
+          <span>🔗 github.com/Sam7777M</span>
           <span>📍 India</span>
         </div>
       </div>
