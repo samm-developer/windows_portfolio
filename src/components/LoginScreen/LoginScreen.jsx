@@ -107,11 +107,32 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
       {/* Loading overlay */}
       {isLoading && (
         <div className="loading-overlay">
-          <div className="loading-spinner">
-            <div className="windows-loading">
-              <div className="loading-bar"></div>
+          <div className="xp-loading-screen">
+            {/* Windows XP Logo */}
+            <div className="xp-loading-logo">
+              <div className="xp-logo-pane orange"></div>
+              <div className="xp-logo-pane green"></div>
+              <div className="xp-logo-pane blue"></div>
+              <div className="xp-logo-pane yellow"></div>
             </div>
-            <p>Loading your settings...</p>
+            
+            {/* Title */}
+            <div className="xp-loading-title">
+              <span className="xp-title-main">SAM</span>
+              <span className="xp-title-suffix">xp</span>
+            </div>
+            
+            {/* Subtitle */}
+            <div className="xp-loading-subtitle">Senior Software Developer</div>
+            
+            {/* Progress Bar */}
+            <div className="xp-progress-container">
+              <div className="xp-progress-bar">
+                <div className="xp-progress-segment"></div>
+                <div className="xp-progress-segment"></div>
+                <div className="xp-progress-segment"></div>
+              </div>
+            </div>
           </div>
         </div>
       )}
