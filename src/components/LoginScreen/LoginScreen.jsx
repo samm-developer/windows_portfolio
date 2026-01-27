@@ -1,13 +1,38 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './LoginScreen.css'
 
 const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
   const [isHovered, setIsHovered] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <div className="login-screen">
       {/* Scanlines overlay */}
       <div className="scanlines"></div>
+      
+      {/* Mobile warning message */}
+      {isMobile && (
+        <div className="mobile-warning-banner">
+          <div className="mobile-warning-content">
+            <svg className="mobile-warning-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#ffca28" stroke="#ff9800" strokeWidth="1.5"/>
+              <path d="M2 17L12 22L22 17" stroke="#ff9800" strokeWidth="1.5" fill="none"/>
+              <path d="M2 12L12 17L22 12" stroke="#ff9800" strokeWidth="1.5" fill="none"/>
+            </svg>
+            <div className="mobile-warning-text">
+              <strong>For the best experience, please open this site on a laptop or desktop computer.</strong>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* Main content area */}
       <div className="login-content">

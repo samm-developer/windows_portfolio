@@ -61,6 +61,29 @@
   z-index: 10;
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .desktop-icons {
+    padding: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .desktop-background::after {
+    bottom: 50px; /* Account for larger mobile taskbar */
+  }
+}
+
+@media (max-width: 480px) {
+  .desktop-icons {
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
 /* Welcome message popup */
 .welcome-message {
   position: absolute;

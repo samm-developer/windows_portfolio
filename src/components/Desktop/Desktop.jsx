@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Taskbar from '../Taskbar/Taskbar'
 import DesktopIcon from '../Icons/DesktopIcon'
 import Window from '../Window/Window'
@@ -13,6 +13,15 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
   const [openWindows, setOpenWindows] = useState([])
   const [activeWindow, setActiveWindow] = useState(null)
   const [startMenuOpen, setStartMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const icons = [
     { id: 'about', title: 'About Me', icon: 'about' },
@@ -53,18 +62,37 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
 
   const openWindow = useCallback((id) => {
     if (!openWindows.find(w => w.id === id)) {
-      const basePosition = { x: 100 + openWindows.length * 30, y: 50 + openWindows.length * 30 }
+      const basePosition = isMobile 
+        ? { x: 0, y: 0 } 
+        : { x: 100 + openWindows.length * 30, y: 50 + openWindows.length * 30 }
+      
+      // For resume on mobile, use full screen dimensions
+      let defaultSize
+      if (isMobile && id === 'resume') {
+        defaultSize = { 
+          width: window.innerWidth, 
+          height: window.innerHeight - (window.innerWidth <= 480 ? 55 : 50) 
+        }
+      } else if (isMobile) {
+        defaultSize = { 
+          width: window.innerWidth, 
+          height: window.innerHeight - (window.innerWidth <= 480 ? 55 : 50) 
+        }
+      } else {
+        defaultSize = { width: 950, height: 701 }
+      }
+      
       setOpenWindows(prev => [...prev, { 
         id, 
         position: basePosition,
-        size: { width: 950, height: 701 },
+        size: defaultSize,
         minimized: false,
-        maximized: false
+        maximized: isMobile // Auto-maximize on mobile
       }])
     }
     setActiveWindow(id)
     setStartMenuOpen(false)
-  }, [openWindows])
+  }, [openWindows, isMobile])
 
   const closeWindow = useCallback((id) => {
     setOpenWindows(prev => prev.filter(w => w.id !== id))
@@ -134,7 +162,7 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
             title={icon.title}
             icon={icon.icon}
             onDoubleClick={() => openWindow(icon.id)}
-            style={{ top: `${20 + index * 115}px` }}
+            style={isMobile ? {} : { top: `${20 + index * 115}px` }}
           />
         ))}
       </div>

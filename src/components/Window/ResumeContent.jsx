@@ -1,30 +1,76 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './ContentStyles.css'
 import resumePdf from '../../assets/Shashwat_CV.pdf'
 
 const ResumeContent = () => {
-  const [zoom, setZoom] = useState(100)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+  // Set default zoom to fit page width on mobile (using 'fit' string), 100% on desktop
+  const [zoom, setZoom] = useState(isMobile ? 'fit' : 100)
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768
+      setIsMobile(mobile)
+      // Update zoom to fit page width on mobile
+      if (mobile && typeof zoom !== 'string') {
+        setZoom('fit')
+      } else if (!mobile && typeof zoom === 'string') {
+        setZoom(100)
+      }
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [zoom])
 
   const handleZoomIn = () => {
     setZoom(prev => {
+      if (typeof prev === 'string') {
+        // If currently using fit view, switch to numeric zoom
+        return isMobile ? 125 : 125
+      }
       const newZoom = Math.min(prev + 25, 200)
-      // Update PDF zoom via iframe if needed
       return newZoom
     })
   }
 
   const handleZoomOut = () => {
     setZoom(prev => {
+      if (typeof prev === 'string') {
+        // If currently using fit view, switch to numeric zoom
+        return isMobile ? 75 : 75
+      }
       const newZoom = Math.max(prev - 25, 50)
       return newZoom
     })
   }
 
-  const handleSave = () => {
-    const link = document.createElement('a')
-    link.href = resumePdf
-    link.download = 'Shashwat_CV.pdf'
-    link.click()
+  const handleSave = async () => {
+    try {
+      // Fetch the PDF as a blob
+      const response = await fetch(resumePdf)
+      const blob = await response.blob()
+      
+      // Create an object URL from the blob
+      const url = window.URL.createObjectURL(blob)
+      
+      // Create a temporary anchor element and trigger download
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'Sam_cv.pdf'
+      document.body.appendChild(link)
+      link.click()
+      
+      // Clean up: remove the link and revoke the object URL
+      document.body.removeChild(link)
+      window.URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Error downloading resume:', error)
+      // Fallback: try direct download
+      const link = document.createElement('a')
+      link.href = resumePdf
+      link.download = 'Sam_cv.pdf'
+      link.click()
+    }
   }
 
   const handlePrint = () => {
@@ -100,7 +146,7 @@ const ResumeContent = () => {
         {/* PDF Content Area */}
         <div className="pdf-content-area">
           <iframe
-            src={`${resumePdf}#zoom=${zoom}&toolbar=0&navpanes=0&scrollbar=1`}
+            src={`${resumePdf}${typeof zoom === 'string' ? '#view=FitH' : `#zoom=${zoom}`}&toolbar=0&navpanes=0&scrollbar=1`}
             className="pdf-object"
             title="Resume PDF"
           />

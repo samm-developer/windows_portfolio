@@ -327,6 +327,26 @@ blockquote {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 768px) {
+  .pdf-object {
+    min-height: 400px;
+  }
+  
+  .pdf-content-area {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-object {
+    min-height: 300px;
+  }
+  
+  .pdf-content-area {
+    padding: 3px;
+  }
+}
+
 /* Status Bar */
 .pdf-status-bar {
   height: 22px;
@@ -945,8 +965,68 @@ a.contact-card-value:hover {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .content-wrapper {
+    padding: 15px;
+  }
+
+  .about-content .content-header {
+    margin-bottom: 20px;
+  }
+
+  .about-content .profile-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .profile-avatar-large {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-info h1 {
+    font-size: 24px;
+  }
+
+  .profile-info h2 {
+    font-size: 14px;
+  }
+
+  .about-section {
+    margin-bottom: 20px;
+  }
+
+  .about-section h3 {
+    font-size: 16px;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .skills-list li {
+    padding: 12px;
+  }
+
+  .tools-category {
+    margin-bottom: 20px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+  }
+
+  .tool-item {
+    padding: 8px;
+    font-size: 12px;
+  }
+
   .contact-body {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .form-row {
@@ -955,13 +1035,13 @@ a.contact-card-value:hover {
   
   .projects-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
-  
-  .about-content .profile-section {
-    flex-direction: column;
-    text-align: center;
+
+  .project-card {
+    padding: 15px;
   }
-  
+
   .resume-header {
     flex-direction: column;
     text-align: center;
@@ -970,5 +1050,75 @@ a.contact-card-value:hover {
   
   .resume-contact {
     text-align: center;
+  }
+
+  /* PDF Viewer Mobile */
+  .pdf-viewer-window {
+    height: calc(100vh - 100px);
+  }
+
+  .pdf-toolbar {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .pdf-toolbar-button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .pdf-content-area {
+    height: calc(100% - 100px);
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 10px;
+  }
+
+  .profile-avatar-large {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile-info h1 {
+    font-size: 20px;
+  }
+
+  .about-section h3 {
+    font-size: 15px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 6px;
+  }
+
+  .tool-item {
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  .projects-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 12px;
+  }
+
+  .pdf-viewer-window {
+    height: calc(100vh - 110px);
+  }
+
+  .pdf-toolbar {
+    flex-wrap: wrap;
+    padding: 6px;
+  }
+
+  .pdf-toolbar-button {
+    padding: 6px 10px;
+    font-size: 12px;
   }
 }

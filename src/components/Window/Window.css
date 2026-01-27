@@ -270,3 +270,85 @@
   width: 4px;
   cursor: ew-resize;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .window {
+    border-radius: 0;
+  }
+
+  .window-titlebar {
+    height: 40px;
+    padding: 0 8px 0 12px;
+    border-radius: 0;
+  }
+
+  .window-title {
+    font-size: 15px;
+    gap: 8px;
+  }
+
+  .title-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .window-button {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+  }
+
+  .window-button svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .window-content {
+    margin: 0;
+    border-width: 0;
+  }
+
+  /* Larger resize handles for touch */
+  .resize-handle {
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  .resize-nw,
+  .resize-ne,
+  .resize-sw,
+  .resize-se {
+    width: 20px;
+    height: 20px;
+  }
+
+  .resize-n,
+  .resize-s {
+    height: 8px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .resize-w,
+  .resize-e {
+    width: 8px;
+    top: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .window-titlebar {
+    height: 44px;
+  }
+
+  .window-title {
+    font-size: 14px;
+  }
+
+  .window-button {
+    width: 36px;
+    height: 36px;
+  }
+}

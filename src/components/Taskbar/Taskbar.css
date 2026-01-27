@@ -255,3 +255,90 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .taskbar {
+    height: 50px;
+  }
+
+  .start-button {
+    padding: 0 16px 0 10px;
+    min-width: 60px;
+  }
+
+  .start-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .start-text {
+    font-size: 16px;
+  }
+
+  .taskbar-window-button {
+    height: 32px;
+    min-width: 100px;
+    max-width: 150px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .taskbar-window-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .taskbar-window-title {
+    font-size: 12px;
+  }
+
+  .system-tray {
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .tray-button {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+
+  .clock {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .taskbar {
+    height: 55px;
+  }
+
+  .start-button {
+    padding: 0 12px 0 8px;
+    min-width: 55px;
+  }
+
+  .start-text {
+    font-size: 14px;
+  }
+
+  .taskbar-window-button {
+    min-width: 80px;
+    max-width: 120px;
+    padding: 0 8px;
+  }
+
+  .taskbar-window-title {
+    font-size: 11px;
+  }
+
+  .system-tray {
+    padding: 0 8px;
+    gap: 8px;
+  }
+
+  .clock {
+    font-size: 11px;
+  }
+}

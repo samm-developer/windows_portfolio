@@ -522,6 +522,65 @@
   }
 }
 
+/* Mobile Warning Banner */
+.mobile-warning-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: linear-gradient(
+    180deg,
+    #ff9800 0%,
+    #f57c00 50%,
+    #e65100 100%
+  );
+  border-bottom: 2px solid #bf360c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobile-warning-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  max-width: 100%;
+}
+
+.mobile-warning-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.mobile-warning-text {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.mobile-warning-text strong {
+  font-weight: 700;
+  font-size: 15px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .login-content {
@@ -558,5 +617,49 @@
   .login-right {
     padding-left: 0;
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-warning-content {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .mobile-warning-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobile-warning-text {
+    font-size: 13px;
+  }
+
+  .mobile-warning-text strong {
+    font-size: 14px;
+  }
+
+  .login-content {
+    padding-top: 60px; /* Add space for warning banner */
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-warning-content {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .mobile-warning-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mobile-warning-text {
+    font-size: 12px;
+  }
+
+  .mobile-warning-text strong {
+    font-size: 13px;
   }
 }

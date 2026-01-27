@@ -126,3 +126,32 @@ body {
   height: 16px;
   width: 16px;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  html, body, #root {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    touch-action: manipulation;
+  }
+
+  /* Smaller scrollbars on mobile */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile styles */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
