@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import './Window.css'
 
 const Window = ({
@@ -21,55 +21,101 @@ const Window = ({
   const windowRef = useRef(null)
   const [isDragging, setIsDragging] = useState(false)
   const [isResizing, setIsResizing] = useState(false)
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
-  const [resizeStart, setResizeStart] = useState({ x: 0, y: 0, width: 0, height: 0 })
+  const [resizeDirection, setResizeDirection] = useState(null)
+  const dragOffsetRef = useRef({ x: 0, y: 0 })
+  const resizeStartRef = useRef({ x: 0, y: 0, width: 0, height: 0, left: 0, top: 0 })
+  const isDraggingRef = useRef(false)
+  const isResizingRef = useRef(false)
+  const resizeDirectionRef = useRef(null)
 
   // Handle dragging
   const handleMouseDown = (e) => {
-    if (e.target.closest('.window-controls')) return
+    if (e.target.closest('.window-controls') || e.target.closest('.resize-handle')) return
     
     onFocus()
     if (maximized) return
     
     setIsDragging(true)
-    setDragOffset({
+    isDraggingRef.current = true
+    dragOffsetRef.current = {
       x: e.clientX - position.x,
       y: e.clientY - position.y
-    })
+    }
   }
 
-  const handleMouseMove = (e) => {
-    if (isDragging && !maximized) {
-      const newX = Math.max(0, e.clientX - dragOffset.x)
-      const newY = Math.max(0, e.clientY - dragOffset.y)
+  const handleMouseMove = useCallback((e) => {
+    if (isDraggingRef.current && !maximized) {
+      const newX = Math.max(0, e.clientX - dragOffsetRef.current.x)
+      const newY = Math.max(0, e.clientY - dragOffsetRef.current.y)
       onPositionChange({ x: newX, y: newY })
     }
     
-    if (isResizing) {
-      const newWidth = Math.max(400, resizeStart.width + (e.clientX - resizeStart.x))
-      const newHeight = Math.max(300, resizeStart.height + (e.clientY - resizeStart.y))
+    if (isResizingRef.current && resizeDirectionRef.current) {
+      const start = resizeStartRef.current
+      const direction = resizeDirectionRef.current
+      const minWidth = 400
+      const minHeight = 300
+      
+      let newWidth = start.width
+      let newHeight = start.height
+      let newX = start.left
+      let newY = start.top
+      
+      // Handle horizontal resizing
+      if (direction.includes('e')) {
+        newWidth = Math.max(minWidth, start.width + (e.clientX - start.x))
+      }
+      if (direction.includes('w')) {
+        const deltaX = e.clientX - start.x
+        newWidth = Math.max(minWidth, start.width - deltaX)
+        newX = Math.max(0, start.left + deltaX)
+      }
+      
+      // Handle vertical resizing
+      if (direction.includes('s')) {
+        newHeight = Math.max(minHeight, start.height + (e.clientY - start.y))
+      }
+      if (direction.includes('n')) {
+        const deltaY = e.clientY - start.y
+        newHeight = Math.max(minHeight, start.height - deltaY)
+        newY = Math.max(0, start.top + deltaY)
+      }
+      
       onSizeChange({ width: newWidth, height: newHeight })
+      if (direction.includes('w') || direction.includes('n')) {
+        onPositionChange({ x: newX, y: newY })
+      }
     }
-  }
+  }, [maximized, onPositionChange, onSizeChange])
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setIsDragging(false)
     setIsResizing(false)
-  }
+    setResizeDirection(null)
+    isDraggingRef.current = false
+    isResizingRef.current = false
+    resizeDirectionRef.current = null
+  }, [])
 
   // Resize handle
-  const handleResizeStart = (e) => {
+  const handleResizeStart = (e, direction) => {
     e.stopPropagation()
+    e.preventDefault()
     onFocus()
     if (maximized) return
     
     setIsResizing(true)
-    setResizeStart({
+    setResizeDirection(direction)
+    isResizingRef.current = true
+    resizeDirectionRef.current = direction
+    resizeStartRef.current = {
       x: e.clientX,
       y: e.clientY,
       width: size.width,
-      height: size.height
-    })
+      height: size.height,
+      left: position.x,
+      top: position.y
+    }
   }
 
   useEffect(() => {
@@ -81,7 +127,7 @@ const Window = ({
         window.removeEventListener('mouseup', handleMouseUp)
       }
     }
-  }, [isDragging, isResizing, dragOffset, resizeStart])
+  }, [isDragging, isResizing, handleMouseMove, handleMouseUp])
 
   if (minimized) return null
 
@@ -197,12 +243,44 @@ const Window = ({
         {children}
       </div>
 
-      {/* Resize Handle */}
+      {/* Resize Handles */}
       {!maximized && (
-        <div 
-          className="resize-handle"
-          onMouseDown={handleResizeStart}
-        />
+        <>
+          {/* Corners */}
+          <div 
+            className="resize-handle resize-nw"
+            onMouseDown={(e) => handleResizeStart(e, 'nw')}
+          />
+          <div 
+            className="resize-handle resize-ne"
+            onMouseDown={(e) => handleResizeStart(e, 'ne')}
+          />
+          <div 
+            className="resize-handle resize-sw"
+            onMouseDown={(e) => handleResizeStart(e, 'sw')}
+          />
+          <div 
+            className="resize-handle resize-se"
+            onMouseDown={(e) => handleResizeStart(e, 'se')}
+          />
+          {/* Edges */}
+          <div 
+            className="resize-handle resize-n"
+            onMouseDown={(e) => handleResizeStart(e, 'n')}
+          />
+          <div 
+            className="resize-handle resize-s"
+            onMouseDown={(e) => handleResizeStart(e, 's')}
+          />
+          <div 
+            className="resize-handle resize-w"
+            onMouseDown={(e) => handleResizeStart(e, 'w')}
+          />
+          <div 
+            className="resize-handle resize-e"
+            onMouseDown={(e) => handleResizeStart(e, 'e')}
+          />
+        </>
       )}
     </div>
   )

@@ -177,13 +177,43 @@
   overflow: auto;
 }
 
-/* Resize Handle */
+/* Resize Handles */
 .resize-handle {
   position: absolute;
+  background: transparent;
+  z-index: 10;
+}
+
+/* Corner handles */
+.resize-nw {
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nwse-resize;
+}
+
+.resize-ne {
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nesw-resize;
+}
+
+.resize-sw {
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nesw-resize;
+}
+
+.resize-se {
   bottom: 0;
   right: 0;
-  width: 16px;
-  height: 16px;
+  width: 8px;
+  height: 8px;
   cursor: nwse-resize;
   background: 
     linear-gradient(
@@ -204,6 +234,39 @@
   opacity: 0.5;
 }
 
-.resize-handle:hover {
+.resize-se:hover {
   opacity: 0.8;
+}
+
+/* Edge handles */
+.resize-n {
+  top: 0;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.resize-s {
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.resize-w {
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+.resize-e {
+  right: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  cursor: ew-resize;
 }

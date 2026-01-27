@@ -57,7 +57,7 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
       setOpenWindows(prev => [...prev, { 
         id, 
         position: basePosition,
-        size: { width: 750, height: 550 },
+        size: { width: 950, height: 701 },
         minimized: false,
         maximized: false
       }])

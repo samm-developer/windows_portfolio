@@ -1,191 +1,115 @@
+import { useState } from 'react'
 import './ContentStyles.css'
+import resumePdf from '../../assets/Shashwat_CV.pdf'
 
 const ResumeContent = () => {
-  const experiences = [
-    {
-      title: 'Senior Software Developer',
-      company: 'Bounteous and Accolite',
-      period: '2025 - Present',
-      location: 'India',
-      description: 'Optimised React rendering performance up to 30% by reducing unnecessary re-renders using memoization techniques, efficient state management using redux, pagination on api for infinite scroll, and component-level optimisation. Improved initial page load time up to 40% by implementing code splitting, lazy loading, and asset optimization. Improved API response times by refactoring async workflows, optimising queries and implementing indexing. Designed scalable frontend–backend system architecture using Next.js SSR, Redis caching, and optimised API layers. Implemented Socket.IO-based real-time workflows for customer support. Mentored junior developers through code reviews and technical guidance.',
-      highlights: ['React Performance', 'Next.js SSR', 'Redis Caching', 'Socket.IO', 'Mentoring']
-    },
-    {
-      title: 'Software Developer',
-      company: 'Saksoft',
-      period: '2022 - 2025',
-      location: 'India',
-      description: 'Worked on OSLO v4 (react.js, javascript) and OSLO v5 (next.js, typescript, Redis, Redux) with Express.js, Node.js, MongoDB. Optimised API call in OSLO v5 using SSR by 40%, cutting load time by 30% compared to OSLO v4. Designed and implemented micro-frontend architecture in OSLO v6 using modular React applications. Built optimised search suggestion using debouncing, throttling and redux-toolkit, optimising search latency by 60%. Built RiskWrite and IMS from scratch supporting 1M+ users. Built IFFCO (Govt e-com) with React, Node, Express, GraphQL, AWS. Integrated PayU, AmazonPay, and JusPay payment gateways. Led development of Redington Gulf E-COM project. Integrated RabbitMQ for decoupled communication across microservices. Mentored 4 junior developers.',
-      highlights: ['Micro Frontend', 'Payment Gateways', 'GraphQL', 'RabbitMQ', 'E-Commerce']
-    },
-    {
-      title: 'Software Development Intern',
-      company: 'BingePrime',
-      period: '05/2022 - 11/2022',
-      location: 'India',
-      description: 'Worked on movie streaming website BingePrime. Implemented Razorpay payment gateway for subscription based model. Reduced javascript execution time by utilizing pre-loading, pre-caching, and lazy loading of assets. Developed a customised movie recommendation system.',
-      highlights: ['Razorpay', 'Performance Optimization', 'Recommendation System']
-    },
-    {
-      title: 'Web Developer Intern',
-      company: 'LetsGrowMore',
-      period: '09/2021 - 03/2022',
-      location: 'India',
-      description: 'Implemented secure login using access and refresh tokens and cache for blocking used tokens after logout. Handled authorized routing for subscriber-only routes with MongoDB aggregation pipelines. Designed various secure login/signup methods including auto login or OAuth login via Google and Facebook. Managed PhonePe Payment gateway and hosting on AWS.',
-      highlights: ['OAuth', 'MongoDB', 'AWS', 'Security']
-    }
-  ]
+  const [zoom, setZoom] = useState(100)
 
-  const education = [
-    {
-      degree: 'B.Tech (Computer Science and Engineering)',
-      school: 'Bundelkhand Institute of Engineering and Technology, Jhansi',
-      year: '4 years',
-      focus: 'Percentage: 77%'
-    }
-  ]
+  const handleZoomIn = () => {
+    setZoom(prev => {
+      const newZoom = Math.min(prev + 25, 200)
+      // Update PDF zoom via iframe if needed
+      return newZoom
+    })
+  }
+
+  const handleZoomOut = () => {
+    setZoom(prev => {
+      const newZoom = Math.max(prev - 25, 50)
+      return newZoom
+    })
+  }
+
+  const handleSave = () => {
+    const link = document.createElement('a')
+    link.href = resumePdf
+    link.download = 'Shashwat_CV.pdf'
+    link.click()
+  }
+
+  const handlePrint = () => {
+    window.open(resumePdf, '_blank')
+  }
 
   return (
-    <div className="content-wrapper resume-content">
-      {/* Header */}
-      <div className="resume-header">
-        <div className="resume-title">
-          <h1>SAM</h1>
-          <h2>Senior Software Developer (SDE-2)</h2>
+    <div className="content-wrapper resume-content pdf-viewer-wrapper">
+      {/* Windows XP Style PDF Viewer */}
+      <div className="pdf-viewer-window">
+        {/* Title Bar */}
+        <div className="pdf-title-bar">
+          <div className="pdf-title-left">
+            <svg viewBox="0 0 16 16" className="pdf-icon" width="16" height="16">
+              <path d="M3 1 L3 15 L13 15 L13 5 L9 1 Z" fill="#fff" stroke="#666" strokeWidth="0.5"/>
+              <path d="M9 1 L9 5 L13 5 Z" fill="#e0e0e0"/>
+              <rect x="5" y="7" width="6" height="1" fill="#cc0000"/>
+              <rect x="5" y="9" width="6" height="1" fill="#cc0000"/>
+            </svg>
+            <span className="pdf-title-text">My Resume</span>
+          </div>
+          <div className="pdf-title-buttons">
+            <button className="pdf-window-button minimize">_</button>
+            <button className="pdf-window-button maximize">□</button>
+            <button className="pdf-window-button close">×</button>
+          </div>
         </div>
-        <div className="resume-contact">
-          <span>📧 devsamm72@gmail.com</span>
-          <span>📱 9452392955</span>
-          <span>🔗 github.com/samm-developer</span>
-          <span>🔗 github.com/Sam7777M</span>
-          <span>📍 India</span>
-        </div>
-      </div>
 
-      {/* Experience Section */}
-      <section className="resume-section">
-        <h3>💼 Professional Experience</h3>
-        <div className="experience-list">
-          {experiences.map((exp, index) => (
-            <div key={index} className="experience-item">
-              <div className="experience-header">
-                <div className="experience-title">
-                  <h4>{exp.title}</h4>
-                  <span className="company">{exp.company} {exp.location ? `• ${exp.location}` : ''}</span>
-                </div>
-                <span className="period">{exp.period}</span>
-              </div>
-              <p className="experience-description">{exp.description}</p>
-              <div className="highlights">
-                {exp.highlights.map((highlight, i) => (
-                  <span key={i} className="highlight-tag">{highlight}</span>
-                ))}
-              </div>
-            </div>
-          ))}
+        {/* Menu Bar */}
+        <div className="pdf-menu-bar">
+          <div className="pdf-menu-item">File</div>
+          <div className="pdf-menu-item">View</div>
+          <div className="pdf-menu-item">Help</div>
         </div>
-      </section>
 
-      {/* Education Section */}
-      <section className="resume-section">
-        <h3>🎓 Education</h3>
-        <div className="education-list">
-          {education.map((edu, index) => (
-            <div key={index} className="education-item">
-              <div className="education-header">
-                <h4>{edu.degree}</h4>
-                <span className="year">{edu.year}</span>
-              </div>
-              <span className="school">{edu.school}</span>
-              <span className="focus">Focus: {edu.focus}</span>
-            </div>
-          ))}
+        {/* Toolbar */}
+        <div className="pdf-toolbar">
+          <button className="pdf-toolbar-button" onClick={handleZoomIn} title="Zoom In">
+            <svg viewBox="0 0 16 16" width="16" height="16">
+              <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="8" y1="4" x2="8" y2="12" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="4" y1="8" x2="12" y2="8" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+            <span>Zoom</span>
+          </button>
+          <button className="pdf-toolbar-button" onClick={handleSave} title="Save">
+            <svg viewBox="0 0 16 16" width="16" height="16">
+              <rect x="2" y="2" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="2" y1="6" x2="14" y2="6" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="5" y1="2" x2="5" y2="6" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+            <span>Save</span>
+          </button>
+          <button className="pdf-toolbar-button" onClick={handlePrint} title="Print">
+            <svg viewBox="0 0 16 16" width="16" height="16">
+              <rect x="3" y="4" width="10" height="8" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+              <rect x="5" y="2" width="6" height="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="3" y1="7" x2="13" y2="7" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="3" y1="9" x2="13" y2="9" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+            <span>Print</span>
+          </button>
+          <button className="pdf-toolbar-button" title="Contact Me">
+            <svg viewBox="0 0 16 16" width="16" height="16">
+              <circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M8 3 A5 5 0 0 1 13 8" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M8 13 A5 5 0 0 1 3 8" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+            <span>Contact Me</span>
+          </button>
         </div>
-      </section>
 
-      {/* Skills Section */}
-      <section className="resume-section">
-        <h3>🛠️ Skills</h3>
-        <div className="skills-container">
-          <div className="skill-category">
-            <h4>Frontend Technologies</h4>
-            <div className="skill-tags">
-              <span className="skill-tag">React.js</span>
-              <span className="skill-tag">Next.js</span>
-              <span className="skill-tag">Micro Frontend</span>
-              <span className="skill-tag">React-Native</span>
-              <span className="skill-tag">Redux</span>
-              <span className="skill-tag">Payment-Gateway</span>
-              <span className="skill-tag">SSR</span>
-              <span className="skill-tag">CSR</span>
-              <span className="skill-tag">Material UI</span>
-              <span className="skill-tag">Tailwind CSS</span>
-              <span className="skill-tag">React Hook</span>
-            </div>
-          </div>
-          <div className="skill-category">
-            <h4>Backend Technology</h4>
-            <div className="skill-tags">
-              <span className="skill-tag">Node.js</span>
-              <span className="skill-tag">Micro Services</span>
-              <span className="skill-tag">GraphQL</span>
-              <span className="skill-tag">RabbitMQ</span>
-              <span className="skill-tag">Redis</span>
-              <span className="skill-tag">Express.js</span>
-              <span className="skill-tag">GTM</span>
-              <span className="skill-tag">Google Analytics</span>
-              <span className="skill-tag">SAP</span>
-              <span className="skill-tag">REST API</span>
-              <span className="skill-tag">Caching</span>
-              <span className="skill-tag">Socket.io</span>
-            </div>
-          </div>
-          <div className="skill-category">
-            <h4>DevOps</h4>
-            <div className="skill-tags">
-              <span className="skill-tag">AWS</span>
-              <span className="skill-tag">EC2</span>
-              <span className="skill-tag">S3</span>
-              <span className="skill-tag">Docker</span>
-              <span className="skill-tag">Jenkins</span>
-              <span className="skill-tag">Lambda</span>
-              <span className="skill-tag">Putty</span>
-              <span className="skill-tag">CI/CD</span>
-            </div>
-          </div>
-          <div className="skill-category">
-            <h4>Languages</h4>
-            <div className="skill-tags">
-              <span className="skill-tag">JavaScript</span>
-              <span className="skill-tag">TypeScript</span>
-              <span className="skill-tag">Python</span>
-              <span className="skill-tag">C</span>
-              <span className="skill-tag">C++</span>
-            </div>
-          </div>
-          <div className="skill-category">
-            <h4>Database</h4>
-            <div className="skill-tags">
-              <span className="skill-tag">MongoDB</span>
-              <span className="skill-tag">Postgres</span>
-              <span className="skill-tag">MySQL</span>
-              <span className="skill-tag">Query Optimisation</span>
-              <span className="skill-tag">Indexing</span>
-              <span className="skill-tag">Schema Design</span>
-              <span className="skill-tag">ACID</span>
-            </div>
-          </div>
+        {/* PDF Content Area */}
+        <div className="pdf-content-area">
+          <iframe
+            src={`${resumePdf}#zoom=${zoom}&toolbar=0&navpanes=0&scrollbar=1`}
+            className="pdf-object"
+            title="Resume PDF"
+          />
         </div>
-      </section>
 
-      {/* Download Button */}
-      <div className="resume-actions">
-        <button className="download-button">
-          <svg viewBox="0 0 24 24" width="20" height="20">
-            <path d="M12 16 L12 4 M12 16 L8 12 M12 16 L16 12 M4 20 L20 20" stroke="currentColor" strokeWidth="2" fill="none"/>
-          </svg>
-          Download PDF Resume
-        </button>
+        {/* Status Bar */}
+        <div className="pdf-status-bar">
+          <span>Click to zoom, then drag to view other areas</span>
+        </div>
       </div>
     </div>
   )
