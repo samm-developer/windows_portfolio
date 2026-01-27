@@ -48,7 +48,7 @@ const AboutMeContent = () => {
         <section className="about-section">
           <h3>👋 Hello!</h3>
           <p>
-            I’m a Software Developer focused on building clean, scalable, and user-centric applications. I combine strong engineering fundamentals with a sharp eye for detail to deliver reliable and maintainable solutions. With a passion for intuitive UX and a fondness for nostalgic interfaces (like classic Windows XP themes), I enjoy blending thoughtful design with solid technical execution to create software that feels both functional and delightful.
+            I’m a Senior Software Development Engineer with a strong foundation in building clean, scalable, and user centric systems. I bring hands on experience designing and shipping reliable, maintainable applications, with a focus on writing high-quality code and making sound architectural decisions. I’m comfortable owning features end-to-end, collaborating across teams, and balancing technical trade-offs to deliver long-term value. With a passion for intuitive UX, I enjoy blending thoughtful design with solid engineering to create software that is both robust and delightful to use.
           </p>
         </section>
 
@@ -83,40 +83,121 @@ const AboutMeContent = () => {
                 <p>Optimized React rendering performance up to 30%, improved initial page load time up to 40%, and enhanced API response times</p>
               </div>
             </li>
+            <li>
+              <span className="skill-icon">🎓</span>
+              <div>
+                <strong>GATE Exam Qualifier</strong>
+                <p>Qualified GATE exam in CSE (Computer Science and Engineering) and DA (Data Science and Artificial Intelligence)</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h3>📚 Education</h3>
+          <ul className="skills-list">
+            <li>
+              <span className="skill-icon">🎓</span>
+              <div>
+                <strong>B.Tech (Computer Science and Engineering)</strong>
+                <p>77% (Pass with Distinction)</p>
+              </div>
+            </li>
+            <li>
+              <span className="skill-icon">📖</span>
+              <div>
+                <strong>12th Standard (PCM)</strong>
+                <p>80%</p>
+              </div>
+            </li>
+            <li>
+              <span className="skill-icon">📝</span>
+              <div>
+                <strong>10th Standard</strong>
+                <p>10 CGPA</p>
+              </div>
+            </li>
           </ul>
         </section>
 
         <section className="about-section">
           <h3>🛠️ Tools & Technologies</h3>
-          <div className="tools-grid">
-            <div className="tool-item">React.js</div>
-            <div className="tool-item">Next.js</div>
-            <div className="tool-item">Node.js</div>
-            <div className="tool-item">TypeScript</div>
-            <div className="tool-item">Redux</div>
-            <div className="tool-item">GraphQL</div>
-            <div className="tool-item">MongoDB</div>
-            <div className="tool-item">PostgreSQL</div>
-            <div className="tool-item">Redis</div>
-            <div className="tool-item">AWS</div>
-            <div className="tool-item">Docker</div>
-            <div className="tool-item">RabbitMQ</div>
-            <div className="tool-item">Socket.io</div>
-            <div className="tool-item">Micro Frontend</div>
-            <div className="tool-item">React Native</div>
-            <div className="tool-item">Material UI</div>
+          
+          <div className="tools-category">
+            <h4>Frontend Technologies</h4>
+            <div className="tools-grid">
+              <div className="tool-item">React.js</div>
+              <div className="tool-item">Next.js</div>
+              <div className="tool-item">Micro Frontend</div>
+              <div className="tool-item">React-Native</div>
+              <div className="tool-item">Redux</div>
+              <div className="tool-item">Payment-Gateway</div>
+              <div className="tool-item">SSR</div>
+              <div className="tool-item">CSR</div>
+              <div className="tool-item">Material UI</div>
+              <div className="tool-item">Tailwind CSS</div>
+              <div className="tool-item">React Hook</div>
+            </div>
+          </div>
+
+          <div className="tools-category">
+            <h4>Backend Technology</h4>
+            <div className="tools-grid">
+              <div className="tool-item">Node.js</div>
+              <div className="tool-item">Micro Services</div>
+              <div className="tool-item">GraphQL</div>
+              <div className="tool-item">RabbitMQ</div>
+              <div className="tool-item">Redis</div>
+              <div className="tool-item">Express.js</div>
+              <div className="tool-item">GTM</div>
+              <div className="tool-item">Google Analytics</div>
+              <div className="tool-item">SAP</div>
+              <div className="tool-item">REST API</div>
+              <div className="tool-item">Caching</div>
+              <div className="tool-item">Socket.io</div>
+            </div>
+          </div>
+
+          <div className="tools-category">
+            <h4>Devops</h4>
+            <div className="tools-grid">
+              <div className="tool-item">AWS</div>
+              <div className="tool-item">EC2</div>
+              <div className="tool-item">S3</div>
+              <div className="tool-item">Docker</div>
+              <div className="tool-item">Jenkins</div>
+              <div className="tool-item">Lambda</div>
+              <div className="tool-item">Putty</div>
+              <div className="tool-item">CI/CD</div>
+            </div>
+          </div>
+
+          <div className="tools-category">
+            <h4>Languages</h4>
+            <div className="tools-grid">
+              <div className="tool-item">JavaScript</div>
+              <div className="tool-item">TypeScript</div>
+              <div className="tool-item">Python</div>
+              <div className="tool-item">C</div>
+              <div className="tool-item">C++</div>
+            </div>
+          </div>
+
+          <div className="tools-category">
+            <h4>Database</h4>
+            <div className="tools-grid">
+              <div className="tool-item">MongoDB</div>
+              <div className="tool-item">Postgres</div>
+              <div className="tool-item">MySQL</div>
+              <div className="tool-item">Query Optimisation</div>
+              <div className="tool-item">Indexing</div>
+              <div className="tool-item">Schema Design</div>
+              <div className="tool-item">ACID</div>
+            </div>
           </div>
         </section>
 
-        <section className="about-section">
-          <h3>💡 Philosophy</h3>
-          <blockquote>
-            "Building scalable systems that perform under pressure. Great code is maintainable, 
-            efficient, and solves real business problems. My goal is to create robust, 
-            fault-tolerant applications that deliver exceptional user experiences while 
-            ensuring long-term reliability and scalability."
-          </blockquote>
-        </section>
+        
       </div>
     </div>
   )
