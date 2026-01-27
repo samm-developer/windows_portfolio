@@ -139,12 +139,15 @@
 }
 
 .visual-designer-subtitle {
-  color: #ffcc00;
   font-family: 'Franklin Gothic Medium', 'Segoe UI', Tahoma, sans-serif;
   font-size: 18px;
   font-style: italic;
   margin-top: -5px;
   letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffea00, #ffd54f, #ffb300);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .login-instruction {
@@ -183,16 +186,30 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  background: transparent;
+  position: relative;
   border: none;
   cursor: pointer;
-  padding: 15px 25px;
-  border-radius: 5px;
-  transition: all 0.2s ease;
+  padding: 22px 40px;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.08)
+  );
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .user-profile:hover {
-  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.6);
 }
 
 .user-profile:disabled {
