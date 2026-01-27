@@ -101,21 +101,8 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
         {/* Right side - Places */}
         <div className="start-menu-right">
           <div className="menu-section-title">Quick Links</div>
-          <a 
-            href="https://linkedin.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="menu-link"
-          >
-            <svg viewBox="0 0 24 24" className="link-icon">
-              <rect x="3" y="3" width="18" height="18" rx="2" fill="#0077b5"/>
-              <path d="M7 10 L7 17 M7 7 L7 8" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
-              <path d="M11 17 L11 12 Q11 10 13 10 Q15 10 15 12 L15 17" stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round"/>
-            </svg>
-            LinkedIn
-          </a>
           <a
-            href="https://github.com/Sam7777Mssss" 
+            href="https://github.com/Sam7777M" 
             target="_blank" 
             rel="noopener noreferrer"
             className="menu-link"
@@ -137,18 +124,6 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
               <path d="M12 2 C6.5 2 2 6.5 2 12 C2 16.5 5 20 9 21 L9 18 C7 18.5 6.5 17 6.5 17 C6 16 5.5 15.5 5.5 15.5 C4.5 15 5.5 15 5.5 15 C6.5 15 7 16 7 16 C8 17.5 9.5 17 10 16.5 C10 16 10.5 15.5 10.5 15 C8 14.5 5 13.5 5 10 C5 9 5.5 8 6 7.5 C6 7 5.5 6 6 5 C6 5 7 5 8.5 6 C9 6 10 5.5 12 5.5 C14 5.5 15 6 15.5 6 C17 5 18 5 18 5 C18.5 6 18 7 18 7.5 C18.5 8 19 9 19 10 C19 13.5 16 14.5 13.5 15 C14 15.5 14 16 14 17 L14 21 C18 20 22 16.5 22 12 C22 6.5 17.5 2 12 2" fill="#fff"/>
             </svg>
             GitHub
-          </a>
-          <a 
-            href="https://twitter.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="menu-link"
-          >
-            <svg viewBox="0 0 24 24" className="link-icon">
-              <rect x="3" y="3" width="18" height="18" rx="2" fill="#1da1f2"/>
-              <path d="M8 17 C10 17 12 16 13 15 C16 13 17 10 17 8 C17.5 7.5 18 7 18 6 C17.5 6.5 17 6.5 16.5 6.5 C17 6 17.5 5.5 17.5 5 C17 5.5 16.5 5.5 16 5.5 C15.5 5 15 4.5 14 4.5 C12.5 4.5 11.5 5.5 11.5 7 C11.5 7.5 11.5 7.5 11.5 7.5 C9 7.5 7 6 5.5 4 C5 5 5 6 5.5 6.5 C5 6.5 4.5 6.5 4 6 C4 7.5 5 9 6.5 9.5 C6 9.5 5.5 9.5 5 9.5 C5.5 11 6.5 12 8 12 C7 13 5.5 13.5 4 13.5 C4.5 14 5 14 5.5 14" fill="#fff"/>
-            </svg>
-            Twitter
           </a>
         </div>
       </div>

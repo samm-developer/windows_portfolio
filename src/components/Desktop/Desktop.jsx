@@ -134,7 +134,7 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
             title={icon.title}
             icon={icon.icon}
             onDoubleClick={() => openWindow(icon.id)}
-            style={{ top: `${20 + index * 100}px` }}
+            style={{ top: `${20 + index * 115}px` }}
           />
         ))}
       </div>
