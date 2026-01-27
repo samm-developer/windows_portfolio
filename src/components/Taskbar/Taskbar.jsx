@@ -8,8 +8,7 @@ const Taskbar = ({
   startMenuOpen,
   onWindowClick,
   onToggleCrt,
-  crtEnabled,
-  onShowWelcome
+  crtEnabled
 }) => {
   const [currentTime, setCurrentTime] = useState(new Date())
   const [isFullscreen, setIsFullscreen] = useState(false)
@@ -133,17 +132,6 @@ const Taskbar = ({
       {/* System Tray */}
       <div className="system-tray">
         <div className="tray-icons">
-          <button 
-            className="tray-button" 
-            onClick={onShowWelcome}
-            title="Show welcome message"
-          >
-            <svg viewBox="0 0 16 16" className="tray-icon">
-              <circle cx="8" cy="8" r="6" fill="none" stroke="#fff" strokeWidth="1.5"/>
-              <circle cx="8" cy="5" r="1" fill="#fff"/>
-              <rect x="7" y="7" width="2" height="5" fill="#fff"/>
-            </svg>
-          </button>
           <button 
             className={`tray-button ${crtEnabled ? 'active' : ''}`}
             onClick={onToggleCrt}

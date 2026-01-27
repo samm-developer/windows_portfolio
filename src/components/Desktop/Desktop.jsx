@@ -13,7 +13,6 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
   const [openWindows, setOpenWindows] = useState([])
   const [activeWindow, setActiveWindow] = useState(null)
   const [startMenuOpen, setStartMenuOpen] = useState(false)
-  const [showWelcome, setShowWelcome] = useState(true)
 
   const icons = [
     { id: 'about', title: 'About Me', icon: 'about' },
@@ -117,10 +116,6 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
     setStartMenuOpen(!startMenuOpen)
   }
 
-  const dismissWelcome = () => {
-    setShowWelcome(false)
-  }
-
   const handleDesktopClick = () => {
     setStartMenuOpen(false)
   }
@@ -167,17 +162,6 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
         </Window>
       ))}
 
-      {/* Welcome message */}
-      {showWelcome && (
-        <div className="welcome-message">
-          <div className="welcome-content">
-            <h2>Welcome to SAM Developer XP!</h2>
-            <p>Double-click the icons on the desktop to explore my portfolio.</p>
-            <button onClick={dismissWelcome}>Got it!</button>
-          </div>
-        </div>
-      )}
-
       {/* Start Menu */}
       <StartMenu 
         isOpen={startMenuOpen}
@@ -195,7 +179,6 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
         onWindowClick={restoreWindow}
         onToggleCrt={toggleCrt}
         crtEnabled={crtEnabled}
-        onShowWelcome={() => setShowWelcome(true)}
       />
     </div>
   )
