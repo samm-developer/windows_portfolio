@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './ContentStyles.css'
-import resumePdf from '../../assets/Shashwat_CV.pdf'
+import resumePdf from '../../assets/Sam_CV.pdf'
 
 const ResumeContent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
