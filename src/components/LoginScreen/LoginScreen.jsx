@@ -124,7 +124,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
         </button>
         
         <div className="login-footer-text">
-          <p>After you log on, the system's yours to explore.</p>
+          <p>After you log in, explore the vintage windows.</p>
           <p>Every detail has been designed with a purpose.</p>
         </div>
       </div>

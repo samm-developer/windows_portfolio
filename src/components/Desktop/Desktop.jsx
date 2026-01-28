@@ -128,6 +128,21 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
     setStartMenuOpen(false)
   }, [])
 
+  const handleIconOpen = useCallback((id) => {
+    const existingWindow = openWindows.find(w => w.id === id)
+
+    if (!existingWindow) {
+      openWindow(id)
+      return
+    }
+
+    if (existingWindow.minimized) {
+      restoreWindow(id)
+    } else {
+      focusWindow(id)
+    }
+  }, [openWindows, openWindow, restoreWindow, focusWindow])
+
   const updateWindowPosition = useCallback((id, position) => {
     setOpenWindows(prev => prev.map(w => 
       w.id === id ? { ...w, position } : w
@@ -161,7 +176,7 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
             id={icon.id}
             title={icon.title}
             icon={icon.icon}
-            onDoubleClick={() => openWindow(icon.id)}
+            onDoubleClick={() => handleIconOpen(icon.id)}
             style={isMobile ? {} : { top: `${20 + index * 115}px` }}
           />
         ))}

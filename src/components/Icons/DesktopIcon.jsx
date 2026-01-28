@@ -87,12 +87,6 @@ const DesktopIcon = ({ id, title, icon, onDoubleClick, style }) => {
     <button
       className={`desktop-icon ${isSelected ? 'selected' : ''}`}
       onClick={handleClick}
-      onDoubleClick={(e) => {
-        e.stopPropagation()
-        if (!isMobile) {
-          onDoubleClick()
-        }
-      }}
       onBlur={() => setIsSelected(false)}
       style={style}
     >
