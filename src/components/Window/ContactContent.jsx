@@ -65,7 +65,6 @@ const ContactContent = () => {
       {/* Header */}
       <div className="contact-header">
         <h1>Get In Touch</h1>
-        <p>Have a project in mind or just want to say hello? I'd love to hear from you!</p>
       </div>
 
       <div className="contact-body">
