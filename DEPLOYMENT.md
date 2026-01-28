@@ -10,9 +10,7 @@
 3. Click "New Project" and import your repository
 4. Vercel will auto-detect Vite settings
 5. Add environment variables in project settings:
-   - `VITE_EMAILJS_SERVICE_ID`
-   - `VITE_EMAILJS_TEMPLATE_ID`
-   - `VITE_EMAILJS_PUBLIC_KEY`
+
 6. Click "Deploy"
 
 **Or use CLI:**
@@ -119,9 +117,7 @@ npm run preview  # Test the production build locally
 
 ### 2. Environment Variables
 Make sure to add these in your hosting platform:
-- `VITE_EMAILJS_SERVICE_ID`
-- `VITE_EMAILJS_TEMPLATE_ID`
-- `VITE_EMAILJS_PUBLIC_KEY`
+
 
 ### 3. Check File Sizes
 - Optimize images if needed

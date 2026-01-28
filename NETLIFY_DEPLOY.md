@@ -29,9 +29,7 @@
 5. **Add Environment Variables**:
    - Click **"Show advanced"** → **"New variable"**
    - Add these three variables:
-     - `VITE_EMAILJS_SERVICE_ID` = `service_8pgbwne`
-     - `VITE_EMAILJS_TEMPLATE_ID` = `template_awt4vmc`
-     - `VITE_EMAILJS_PUBLIC_KEY` = `lRk8ABToyJXmdIGqW`
+
 
 6. **Deploy**:
    - Click **"Deploy site"**
@@ -67,9 +65,6 @@
 
 4. **Add environment variables**:
    ```bash
-   netlify env:set VITE_EMAILJS_SERVICE_ID service_8pgbwne
-   netlify env:set VITE_EMAILJS_TEMPLATE_ID template_awt4vmc
-   netlify env:set VITE_EMAILJS_PUBLIC_KEY lRk8ABToyJXmdIGqW
    ```
 
 5. **Deploy**:
@@ -116,9 +111,7 @@ Your EmailJS variables are already configured in `.env` file. Make sure to add t
 
 1. Go to **Site settings** → **Environment variables**
 2. Add each variable:
-   - `VITE_EMAILJS_SERVICE_ID`
-   - `VITE_EMAILJS_TEMPLATE_ID`
-   - `VITE_EMAILJS_PUBLIC_KEY`
+
 
 ---
 
