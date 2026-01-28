@@ -602,6 +602,7 @@ blockquote {
 .projects-filters {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 25px;
 }
@@ -1057,7 +1058,18 @@ a.contact-card-value:hover {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
+  .contact-cards {
+    gap: 10px;
+  }
+
+  .contact-card {
+    align-items: flex-start;
+  }
+
+  .contact-card-content {
+    align-items: flex-start;
+  }
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -1117,6 +1129,23 @@ a.contact-card-value:hover {
 
   .about-section h3 {
     font-size: 15px;
+  }
+
+  .contact-content {
+    padding: 15px;
+  }
+
+  .contact-body {
+    gap: 16px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .submit-button {
+    width: 100%;
   }
 
   .tools-grid {
