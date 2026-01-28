@@ -799,6 +799,11 @@ blockquote {
   font-weight: 600;
 }
 
+.required-asterisk {
+  color: #d32f2f;
+  margin-left: 2px;
+}
+
 .form-group input,
 .form-group textarea {
   padding: 10px 12px;
@@ -819,6 +824,30 @@ blockquote {
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
+}
+
+.input-error {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.15);
+}
+
+.field-error {
+  font-size: 12px;
+  color: #d32f2f;
+}
+
+.error-message {
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background-color: #ffebee;
+  border: 1px solid #d32f2f;
+}
+
+.error-message p {
+  margin: 0;
+  font-size: 13px;
+  color: #d32f2f;
 }
 
 .submit-button {
