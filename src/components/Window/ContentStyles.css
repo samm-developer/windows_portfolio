@@ -316,6 +316,20 @@ blockquote {
   background: #525252;
   position: relative;
   padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+}
+
+.pdf-zoom-wrapper {
+  flex-shrink: 0;
+  display: block;
+}
+
+.pdf-zoom-container {
+  will-change: transform;
+  position: relative;
 }
 
 .pdf-object {
@@ -325,6 +339,7 @@ blockquote {
   border: none;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: block;
 }
 
 @media (max-width: 768px) {

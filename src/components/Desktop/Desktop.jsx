@@ -30,21 +30,6 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
     { id: 'contact', title: 'Contact Me', icon: 'contact' },
   ]
 
-  const getWindowContent = (id) => {
-    switch (id) {
-      case 'about':
-        return <AboutMeContent />
-      case 'resume':
-        return <ResumeContent />
-      case 'projects':
-        return <ProjectsContent />
-      case 'contact':
-        return <ContactContent />
-      default:
-        return null
-    }
-  }
-
   const getWindowTitle = (id) => {
     switch (id) {
       case 'about':
@@ -127,6 +112,55 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
     setActiveWindow(id)
     setStartMenuOpen(false)
   }, [])
+
+  const openContactWindow = useCallback(() => {
+    const existingContact = openWindows.find(w => w.id === 'contact')
+    if (existingContact) {
+      // If contact window exists, restore/focus it
+      if (existingContact.minimized) {
+        restoreWindow('contact')
+      } else {
+        focusWindow('contact')
+      }
+    } else {
+      // Open new contact window with offset position
+      const basePosition = isMobile 
+        ? { x: 0, y: 0 } 
+        : { x: 150, y: 100 } // Offset position: a little down and to the side
+      
+      const defaultSize = isMobile
+        ? { 
+            width: window.innerWidth, 
+            height: window.innerHeight - (window.innerWidth <= 480 ? 55 : 50) 
+          }
+        : { width: 950, height: 701 }
+      
+      setOpenWindows(prev => [...prev, { 
+        id: 'contact', 
+        position: basePosition,
+        size: defaultSize,
+        minimized: false,
+        maximized: isMobile
+      }])
+      setActiveWindow('contact')
+    }
+    setStartMenuOpen(false)
+  }, [openWindows, isMobile, restoreWindow, focusWindow])
+
+  const getWindowContent = useCallback((id) => {
+    switch (id) {
+      case 'about':
+        return <AboutMeContent />
+      case 'resume':
+        return <ResumeContent onOpenContact={openContactWindow} />
+      case 'projects':
+        return <ProjectsContent />
+      case 'contact':
+        return <ContactContent />
+      default:
+        return null
+    }
+  }, [openContactWindow])
 
   const handleIconOpen = useCallback((id) => {
     const existingWindow = openWindows.find(w => w.id === id)
