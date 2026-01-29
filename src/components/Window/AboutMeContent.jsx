@@ -38,7 +38,9 @@ const AboutMeContent = () => {
           <div className="profile-info">
             <h1>SAM</h1>
             <h2>Senior Software Developer (SDE-2)</h2>
-            <p className="tagline">Building scalable, high performance web applications with React, Next.js, Node.js, and AWS.</p>
+            <p className="tagline">
+              Building scalable, high-performance web applications with 4+ years of experience using React, Next.js, Node.js, and AWS.
+            </p>
           </div>
         </div>
       </div>
