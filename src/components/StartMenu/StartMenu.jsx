@@ -102,7 +102,7 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
         <div className="start-menu-right">
           <div className="menu-section-title">Quick Links</div>
           <a
-            href="https://github.com/Sam7777M" 
+            href="https://github.com/byte-void" 
             target="_blank" 
             rel="noopener noreferrer"
             className="menu-link"

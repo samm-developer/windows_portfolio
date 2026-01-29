@@ -12,7 +12,7 @@ const ProjectsContent = () => {
       description: 'Designed and implemented a system that reads incoming tickets and extracts required technologies using natural language processing (NLP). Created a dynamic skill-matching algorithm to identify team members who possess the relevant expertise. Built an automated ticket assignment engine that assigns tasks to the most suitable person based on skills, availability, and workload.',
       tags: ['AI', 'NLP', 'Automation', 'Python'],
       color: '#ff6b35',
-      link: 'https://github.com/Sam7777M/Auto-Ticket-Assigning-Agent'
+      link: 'https://github.com/byte-void/Auto-Ticket-Assigning-Agent'
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ const ProjectsContent = () => {
       description: 'Developed realtime collaborative video platform enabling synchronised YouTube player for multiple users using WebSocket based architecture (especially for couples). Implemented advanced synchronisation algorithms with timestamp-based latency compensation, achieving sub-second accuracy for play/pause/seek operations across all connected clients.',
       tags: ['WebSocket', 'Real-time', 'Video Streaming', 'Node.js'],
       color: '#7cb342',
-      link: 'https://github.com/Sam7777M/watch_party'
+      link: 'https://github.com/byte-void/watch_party'
     },
     {
       id: 4,

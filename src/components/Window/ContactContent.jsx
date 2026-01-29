@@ -117,8 +117,8 @@ const ContactContent = () => {
     {
       icon: '💻',
       label: 'GitHub',
-      value: 'github.com/Sam7777M',
-      link: 'https://github.com/Sam7777M'
+      value: 'github.com/byte-void',
+      link: 'https://github.com/byte-void'
     },
   ]
 
