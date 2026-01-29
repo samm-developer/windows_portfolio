@@ -56,6 +56,15 @@
   margin: 0;
 }
 
+.profile-info .tagline .highlight-years {
+  background: linear-gradient(135deg, #0054e3 0%, #0095ff 100%);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0, 84, 227, 0.3);
+}
+
 .about-section {
   margin-bottom: 25px;
 }
