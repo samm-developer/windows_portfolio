@@ -120,7 +120,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <rect x="13" y="13" width="7" height="7" fill="#ffca28"/>
             </svg>
           </div>
-          <span>Restart SAM Developer XP</span>
+          <span>Restart SAM XP</span>
         </button>
         
         <div className="login-footer-text">
