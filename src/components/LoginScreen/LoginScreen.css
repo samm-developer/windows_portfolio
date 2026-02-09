@@ -50,7 +50,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding-right: 60px;
 }
 
@@ -320,7 +320,7 @@
 }
 
 .login-footer-text {
-  text-align: right;
+  text-align: center;
 }
 
 .login-footer-text p {
@@ -590,6 +590,7 @@
   
   .login-left {
     padding-right: 0;
+    padding-top: inherit;
     align-items: center;
     text-align: center;
   }
