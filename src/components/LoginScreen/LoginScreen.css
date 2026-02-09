@@ -262,7 +262,8 @@
 
 /* Bottom taskbar */
 .login-taskbar {
-  height: 80px;
+  height: auto;
+  min-height: 80px;
   background: linear-gradient(
     180deg,
     #0a246a 0%,
