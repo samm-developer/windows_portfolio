@@ -23,6 +23,20 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  useEffect(() => {
+    const handlePopState = () => {
+      setOpenWindows((prev) => {
+        if (prev.length === 0) return prev
+        const remaining = prev.slice(0, -1)
+        const newActive = remaining.length > 0 ? remaining[remaining.length - 1].id : null
+        setActiveWindow(newActive)
+        return remaining
+      })
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
   const icons = [
     { id: 'about', title: 'About Me', icon: 'about' },
     { id: 'resume', title: 'My Resume', icon: 'resume' },
@@ -74,6 +88,7 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
         minimized: false,
         maximized: isMobile // Auto-maximize on mobile
       }])
+      history.pushState({ portfolioWindow: id }, '')
     }
     setActiveWindow(id)
     setStartMenuOpen(false)
@@ -142,6 +157,7 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
         minimized: false,
         maximized: isMobile
       }])
+      history.pushState({ portfolioWindow: 'contact' }, '')
       setActiveWindow('contact')
     }
     setStartMenuOpen(false)
