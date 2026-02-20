@@ -1,37 +1,55 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { Document, Page } from 'react-pdf'
+import { pdfjs } from 'react-pdf'
+import 'react-pdf/dist/Page/AnnotationLayer.css'
+import 'react-pdf/dist/Page/TextLayer.css'
 import './ContentStyles.css'
 import resumePdf from '../../assets/Sam_CV.pdf'
 
+// PDF.js worker for react-pdf (required for mobile inline rendering)
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
+
+const MOBILE_BREAKPOINT = 768
+const getPdfPageWidth = () =>
+  typeof window !== 'undefined' ? Math.min(window.innerWidth - 40, 400) : 320
+
 const ResumeContent = ({ onOpenContact }) => {
   const iframeRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' && window.innerWidth <= MOBILE_BREAKPOINT
+  )
+  const [numPages, setNumPages] = useState(null)
+  const [pageWidth, setPageWidth] = useState(getPdfPageWidth)
 
-  // Generate iframe src
+  useEffect(() => {
+    const check = () => {
+      setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT)
+      setPageWidth(getPdfPageWidth())
+    }
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
   const getIframeSrc = () => {
     return `${resumePdf}#view=FitH&toolbar=0&navpanes=0&scrollbar=1`
   }
 
+  const onDocumentLoadSuccess = ({ numPages: np }) => setNumPages(np)
+
   const handleSave = async () => {
     try {
-      // Fetch the PDF as a blob
       const response = await fetch(resumePdf)
       const blob = await response.blob()
-      
-      // Create an object URL from the blob
       const url = window.URL.createObjectURL(blob)
-      
-      // Create a temporary anchor element and trigger download
       const link = document.createElement('a')
       link.href = url
       link.download = 'Sam_cv.pdf'
       document.body.appendChild(link)
       link.click()
-      
-      // Clean up: remove the link and revoke the object URL
       document.body.removeChild(link)
       window.URL.revokeObjectURL(url)
     } catch (error) {
       console.error('Error downloading resume:', error)
-      // Fallback: try direct download
       const link = document.createElement('a')
       link.href = resumePdf
       link.download = 'Sam_cv.pdf'
@@ -45,16 +63,13 @@ const ResumeContent = ({ onOpenContact }) => {
 
   return (
     <div className="content-wrapper resume-content pdf-viewer-wrapper">
-      {/* Windows XP Style PDF Viewer */}
       <div className="pdf-viewer-window">
-        {/* Menu Bar */}
         <div className="pdf-menu-bar">
           <div className="pdf-menu-item">File</div>
           <div className="pdf-menu-item">View</div>
           <div className="pdf-menu-item">Help</div>
         </div>
 
-        {/* Toolbar */}
         <div className="pdf-toolbar">
           <button className="pdf-toolbar-button" onClick={handleSave} title="Save">
             <svg viewBox="0 0 16 16" width="16" height="16">
@@ -83,19 +98,49 @@ const ResumeContent = ({ onOpenContact }) => {
           </button>
         </div>
 
-        {/* PDF Content Area */}
         <div className="pdf-content-area">
-          <iframe
-            ref={iframeRef}
-            src={getIframeSrc()}
-            className="pdf-object"
-            title="Resume PDF"
-          />
+          {isMobile ? (
+            <div className="pdf-mobile-view">
+              <Document
+                file={resumePdf}
+                onLoadSuccess={onDocumentLoadSuccess}
+                loading={
+                  <div className="pdf-loading">Loading PDF…</div>
+                }
+                error={
+                  <div className="pdf-error">
+                    <p>Could not load PDF.</p>
+                    <a href={resumePdf} target="_blank" rel="noopener noreferrer">
+                      Open in new tab
+                    </a>
+                  </div>
+                }
+              >
+                {numPages != null &&
+                  Array.from({ length: numPages }, (_, i) => (
+                    <Page
+                      key={`page-${i + 1}`}
+                      pageNumber={i + 1}
+                      width={pageWidth}
+                      className="pdf-mobile-page"
+                    />
+                  ))}
+              </Document>
+            </div>
+          ) : (
+            <iframe
+              ref={iframeRef}
+              src={getIframeSrc()}
+              className="pdf-object"
+              title="Resume PDF"
+            />
+          )}
         </div>
 
-        {/* Status Bar */}
         <div className="pdf-status-bar">
-          <span>Scroll to view the document</span>
+          <span>
+            {isMobile ? 'Scroll to view all pages' : 'Scroll to view the document'}
+          </span>
         </div>
       </div>
     </div>
