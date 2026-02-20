@@ -351,6 +351,47 @@ blockquote {
   display: block;
 }
 
+/* Mobile PDF view (react-pdf) */
+.pdf-mobile-view {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  background: #525252;
+}
+
+.pdf-mobile-view .react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pdf-mobile-page {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: white;
+}
+
+.pdf-mobile-view canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.pdf-loading,
+.pdf-error {
+  color: #fff;
+  padding: 24px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.pdf-error a {
+  color: #0095ff;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .pdf-object {
     min-height: 400px;
