@@ -13,7 +13,7 @@ const MOBILE_BREAKPOINT = 768
 const getPdfPageWidth = () =>
   typeof window !== 'undefined' ? Math.min(window.innerWidth - 40, 400) : 320
 
-const ResumeContent = ({ onOpenContact }) => {
+const ResumeContent = ({ onOpenContact, isWindowActive }) => {
   const iframeRef = useRef(null)
   const [isMobile, setIsMobile] = useState(() =>
     typeof window !== 'undefined' && window.innerWidth <= MOBILE_BREAKPOINT
@@ -128,12 +128,17 @@ const ResumeContent = ({ onOpenContact }) => {
               </Document>
             </div>
           ) : (
-            <iframe
-              ref={iframeRef}
-              src={getIframeSrc()}
-              className="pdf-object"
-              title="Resume PDF"
-            />
+            <div className="pdf-iframe-wrapper">
+              {!isWindowActive && (
+                <div className="pdf-focus-overlay" aria-hidden="true" />
+              )}
+              <iframe
+                ref={iframeRef}
+                src={getIframeSrc()}
+                className="pdf-object"
+                title="Resume PDF"
+              />
+            </div>
           )}
         </div>
 

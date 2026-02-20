@@ -168,7 +168,12 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
       case 'about':
         return <AboutMeContent />
       case 'resume':
-        return <ResumeContent onOpenContact={openContactWindow} />
+        return (
+          <ResumeContent
+            onOpenContact={openContactWindow}
+            isWindowActive={activeWindow === 'resume'}
+          />
+        )
       case 'projects':
         return <ProjectsContent />
       case 'contact':
@@ -176,7 +181,7 @@ const Desktop = ({ onLogout, crtEnabled, toggleCrt }) => {
       default:
         return null
     }
-  }, [openContactWindow])
+  }, [openContactWindow, activeWindow])
 
   const handleIconOpen = useCallback((id) => {
     const existingWindow = openWindows.find(w => w.id === id)
