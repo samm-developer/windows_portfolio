@@ -248,6 +248,33 @@
   height: 100%;
 }
 
+.tray-battery {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 4px;
+  min-width: 28px;
+  height: 18px;
+  box-sizing: border-box;
+}
+
+.tray-battery .battery-icon {
+  width: 20px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+.tray-battery .battery-fill {
+  transition: width 0.2s ease;
+}
+
+.tray-battery .battery-charging {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
 .clock {
   color: white;
   font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -302,6 +329,21 @@
     width: 24px;
     height: 24px;
     padding: 4px;
+  }
+
+  .tray-battery {
+    min-width: 32px;
+    height: 22px;
+  }
+
+  .tray-battery .battery-icon {
+    width: 24px;
+    height: 12px;
+  }
+
+  .tray-battery .battery-charging {
+    width: 12px;
+    height: 12px;
   }
 
   .clock {

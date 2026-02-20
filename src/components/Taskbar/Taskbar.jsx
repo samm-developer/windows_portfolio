@@ -12,12 +12,36 @@ const Taskbar = ({
 }) => {
   const [currentTime, setCurrentTime] = useState(new Date())
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [battery, setBattery] = useState({ level: null, charging: false, supported: false })
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date())
     }, 1000)
     return () => clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    if (!navigator.getBattery) return
+    let cancelled = false
+    let bat = null
+    const update = () => {
+      if (bat && !cancelled) setBattery({ level: bat.level, charging: bat.charging, supported: true })
+    }
+    navigator.getBattery().then((b) => {
+      bat = b
+      if (cancelled) return
+      update()
+      bat.addEventListener('levelchange', update)
+      bat.addEventListener('chargingchange', update)
+    }).catch(() => {})
+    return () => {
+      cancelled = true
+      if (bat) {
+        bat.removeEventListener('levelchange', update)
+        bat.removeEventListener('chargingchange', update)
+      }
+    }
   }, [])
 
   const formatTime = (date) => {
@@ -166,6 +190,35 @@ const Taskbar = ({
               )}
             </svg>
           </button>
+          {battery.supported && (
+            <div
+              className="tray-battery"
+              title={
+                battery.level != null
+                  ? `${Math.round(battery.level * 100)}%${battery.charging ? ' - Charging' : ''}`
+                  : 'Battery'
+              }
+            >
+              <svg viewBox="0 0 24 12" className="tray-icon battery-icon">
+                <rect x="0.5" y="0.5" width="20" height="11" rx="1.5" fill="none" stroke="#fff" strokeWidth="1"/>
+                <rect x="21" y="3.5" width="1.5" height="5" rx="0.5" fill="#fff"/>
+                <rect
+                  x="2"
+                  y="2"
+                  width={Math.max(0, (battery.level ?? 0) * 18)}
+                  height="8"
+                  rx="1"
+                  fill="#fff"
+                  className="battery-fill"
+                />
+              </svg>
+              {battery.charging && (
+                <svg viewBox="0 0 12 12" className="tray-icon battery-charging">
+                  <path d="M7 1 L3 6 L6 6 L2 11 L6 8 L4 8 Z" fill="#fff" stroke="#fff" strokeWidth="0.5" strokeLinejoin="round"/>
+                </svg>
+              )}
+            </div>
+          )}
         </div>
         <div className="clock">
           {formatTime(currentTime)}
