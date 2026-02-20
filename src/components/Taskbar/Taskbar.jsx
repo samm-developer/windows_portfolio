@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './Taskbar.css'
 
 const Taskbar = ({ 
@@ -13,6 +13,9 @@ const Taskbar = ({
   const [currentTime, setCurrentTime] = useState(new Date())
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [battery, setBattery] = useState({ level: null, charging: false, supported: false })
+  const [batteryTooltipVisible, setBatteryTooltipVisible] = useState(false)
+  const batteryRef = useRef(null)
+  const batteryTooltipTimerRef = useRef(null)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -43,6 +46,28 @@ const Taskbar = ({
       }
     }
   }, [])
+
+  useEffect(() => {
+    if (!batteryTooltipVisible) return
+    const handleClickOutside = (e) => {
+      if (batteryRef.current && !batteryRef.current.contains(e.target)) {
+        setBatteryTooltipVisible(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [batteryTooltipVisible])
+
+  const showBatteryTooltip = () => {
+    batteryTooltipTimerRef.current = setTimeout(() => setBatteryTooltipVisible(true), 400)
+  }
+  const hideBatteryTooltip = () => {
+    if (batteryTooltipTimerRef.current) {
+      clearTimeout(batteryTooltipTimerRef.current)
+      batteryTooltipTimerRef.current = null
+    }
+    setBatteryTooltipVisible(false)
+  }
 
   const formatTime = (date) => {
     return date.toLocaleTimeString('en-US', { 
@@ -192,30 +217,54 @@ const Taskbar = ({
           </button>
           {battery.supported && (
             <div
-              className="tray-battery"
-              title={
-                battery.level != null
-                  ? `${Math.round(battery.level * 100)}%${battery.charging ? ' - Charging' : ''}`
-                  : 'Battery'
-              }
+              ref={batteryRef}
+              className="tray-battery-wrapper"
+              onMouseEnter={showBatteryTooltip}
+              onMouseLeave={hideBatteryTooltip}
             >
-              <svg viewBox="0 0 24 12" className="tray-icon battery-icon">
-                <rect x="0.5" y="0.5" width="20" height="11" rx="1.5" fill="none" stroke="#fff" strokeWidth="1"/>
-                <rect x="21" y="3.5" width="1.5" height="5" rx="0.5" fill="#fff"/>
-                <rect
-                  x="2"
-                  y="2"
-                  width={Math.max(0, (battery.level ?? 0) * 18)}
-                  height="8"
-                  rx="1"
-                  fill="#fff"
-                  className="battery-fill"
-                />
-              </svg>
-              {battery.charging && (
-                <svg viewBox="0 0 12 12" className="tray-icon battery-charging">
-                  <path d="M7 1 L3 6 L6 6 L2 11 L6 8 L4 8 Z" fill="#fff" stroke="#fff" strokeWidth="0.5" strokeLinejoin="round"/>
-                </svg>
+              <button
+                type="button"
+                className="tray-battery tray-button"
+                onClick={() => setBatteryTooltipVisible((v) => !v)}
+                aria-label={`Battery ${battery.level != null ? Math.round(battery.level * 100) : '?'}%${battery.charging ? ', charging' : ''}`}
+                title=""
+              >
+                <span className="tray-battery-icon-inner">
+                  <svg viewBox="0 0 24 12" className="tray-icon battery-icon" aria-hidden>
+                    <rect x="0.5" y="0.5" width="20" height="11" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1"/>
+                    <rect x="21" y="3.5" width="1.5" height="5" rx="0.5" fill="currentColor"/>
+                    <rect
+                      x="2"
+                      y="2"
+                      width={Math.max(0, (battery.level ?? 0) * 18)}
+                      height="8"
+                      rx="1"
+                      fill="currentColor"
+                      className="battery-fill"
+                    />
+                  </svg>
+                  {battery.charging && (
+                    <svg viewBox="0 0 12 12" className="tray-icon battery-charging" aria-hidden>
+                      <path d="M7 1 L3 6 L6 6 L2 11 L6 8 L4 8 Z" fill="currentColor" stroke="currentColor" strokeWidth="0.4" strokeLinejoin="round"/>
+                    </svg>
+                  )}
+                </span>
+              </button>
+              {batteryTooltipVisible && (
+                <div className="tray-battery-tooltip" role="tooltip">
+                  <span className="tray-battery-tooltip-line">
+                    <span className="tray-battery-percent">{battery.level != null ? Math.round(battery.level * 100) : '—'}%</span>
+                    {battery.charging && (
+                      <>
+                        <span className="tray-battery-tooltip-dot">·</span>
+                        <span className="tray-battery-charging-label">Charging</span>
+                        <svg viewBox="0 0 12 12" className="tray-battery-tooltip-bolt" aria-hidden>
+                          <path d="M7 1 L3 6 L6 6 L2 11 L6 8 L4 8 Z" fill="currentColor" stroke="currentColor" strokeWidth="0.4" strokeLinejoin="round"/>
+                        </svg>
+                      </>
+                    )}
+                  </span>
+                </div>
               )}
             </div>
           )}
