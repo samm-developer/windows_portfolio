@@ -43,7 +43,7 @@ const ResumeContent = ({ onOpenContact, isWindowActive }) => {
       const url = window.URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
-      link.download = 'Sam_cv.pdf'
+      link.download = 'Rajat_cv.pdf'
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -52,7 +52,7 @@ const ResumeContent = ({ onOpenContact, isWindowActive }) => {
       console.error('Error downloading resume:', error)
       const link = document.createElement('a')
       link.href = resumePdf
-      link.download = 'Sam_cv.pdf'
+      link.download = 'Rajat_cv.pdf'
       link.click()
     }
   }

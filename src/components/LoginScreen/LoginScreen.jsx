@@ -46,15 +46,15 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <div className="flag-piece yellow"></div>
             </div>
             <div className="logo-text">
-              <span className="mitch">SAM</span>
+              <span className="mitch">RAJAT</span>
               <span className="ivin">Developer</span>
               <span className="xp">XP</span>
             </div>
-            <div className="visual-designer-subtitle">Senior Software Developer</div>
+            <div className="visual-designer-subtitle">Software Developer</div>
           </div>
           
           <p className="login-instruction">
-            To begin, click on SAM to log in
+            To begin, click on Rajat to log in
           </p>
         </div>
         
@@ -102,8 +102,8 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               </div>
             </div>
             <div className="user-info">
-              <span className="user-name">SAM</span>
-              <span className="user-role">Senior Software Developer</span>
+              <span className="user-name">RAJAT</span>
+              <span className="user-role">Software Developer</span>
             </div>
           </button>
         </div>
@@ -120,11 +120,11 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <rect x="13" y="13" width="7" height="7" fill="#ffca28"/>
             </svg>
           </div>
-          <span>Restart SAM XP</span>
+          <span>Restart Rajat XP</span>
         </button>
         
         <div className="login-footer-text">
-          <p>Click on Sam to login and explore the vintage windows.</p>
+          <p>Click on Rajat to login and explore the vintage windows.</p>
           {!isMobile && <p>Every detail has been designed with a purpose.</p>}
         </div>
       </div>
@@ -143,12 +143,12 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
             
             {/* Title */}
             <div className="xp-loading-title">
-              <span className="xp-title-main">SAM</span>
+              <span className="xp-title-main">RAJAT</span>
               <span className="xp-title-suffix">xp</span>
             </div>
             
             {/* Subtitle */}
-            <div className="xp-loading-subtitle">Senior Software Developer</div>
+            <div className="xp-loading-subtitle">Software Developer</div>
             
             {/* Progress Bar */}
             <div className="xp-progress-container">

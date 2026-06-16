@@ -36,8 +36,8 @@ const AboutMeContent = () => {
             </svg>
           </div>
           <div className="profile-info">
-            <h1>SAM</h1>
-            <h2>Senior Software Developer (SDE-2)</h2>
+            <h1>RAJAT</h1>
+            <h2>Software Developer</h2>
             <p className="tagline">
               Building scalable, high-performance web applications with <span className="highlight-years">4+ years</span> of experience using React, Next.js, Node.js, and AWS.
             </p>
@@ -50,7 +50,7 @@ const AboutMeContent = () => {
         <section className="about-section">
           <h3>👋 Hello!</h3>
           <p>
-            I’m a Senior Software Development Engineer with a strong foundation in building clean, scalable, and user centric systems. I bring hands on experience designing and shipping reliable, maintainable applications, with a focus on writing high-quality code and making sound architectural decisions. I’m comfortable owning features end-to-end, collaborating across teams, and balancing technical trade-offs to deliver long-term value. With a passion for intuitive UX, I enjoy blending thoughtful design with solid engineering to create software that is both robust and delightful to use.
+            I’m a Software Development Engineer with a strong foundation in building clean, scalable, and user centric systems. I bring hands on experience designing and shipping reliable, maintainable applications, with a focus on writing high-quality code and making sound architectural decisions. I’m comfortable owning features end-to-end, collaborating across teams, and balancing technical trade-offs to deliver long-term value. With a passion for intuitive UX, I enjoy blending thoughtful design with solid engineering to create software that is both robust and delightful to use.
           </p>
         </section>
 
