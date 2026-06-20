@@ -7,90 +7,58 @@ const ProjectsContent = () => {
   const projects = [
     {
       id: 1,
-      title: 'SmartTicket Assigner (AI + Automation)',
-      category: 'ai',
-      description: 'Designed and implemented a system that reads incoming tickets and extracts required technologies using natural language processing (NLP). Created a dynamic skill-matching algorithm to identify team members who possess the relevant expertise. Built an automated ticket assignment engine that assigns tasks to the most suitable person based on skills, availability, and workload.',
-      tags: ['AI', 'NLP', 'Automation', 'Python'],
+      title: "The King's Library",
+      category: 'web',
+      description: 'A live library management system I built for my own library. Students register, sign in, reserve study hours, and pay ₹100/hour or monthly fees online. Admins get a dashboard to view all students, track fee defaulters, and inspect any record — all in one place.',
+      tags: ['React', 'Full-Stack', 'Payments', 'Admin Panel', 'Live Product'],
       color: '#ff6b35',
-      link: 'https://github.com/byte-void/Auto-Ticket-Assigning-Agent'
+      link: 'https://thekingslibrary.in/'
     },
     {
       id: 2,
-      title: 'PriceWise',
+      title: 'Student Portal & Auth',
       category: 'web',
-      description: 'A project to solve the problem faced by customers to get the lowest price to compare current price. It shows the customer the lowest price, average price, and current price of any product on Amazon or Flipkart so the customer can compare prices easily, especially during sales.',
-      tags: ['Web App', 'Price Comparison', 'E-commerce'],
+      description: 'Built the student-facing side of the library platform — registration with personal details, secure login, and a streamlined flow for reserving study hours and paying fees without manual paperwork.',
+      tags: ['Authentication', 'User Flows', 'Web App'],
       color: '#42a5f5',
-      link: 'https://github.com/samm-developer/PriceWise'
+      link: 'https://thekingslibrary.in/'
     },
     {
       id: 3,
-      title: 'WatchParty',
+      title: 'Admin Dashboard',
       category: 'web',
-      description: 'Developed realtime collaborative video platform enabling synchronised YouTube player for multiple users using WebSocket based architecture (especially for couples). Implemented advanced synchronisation algorithms with timestamp-based latency compensation, achieving sub-second accuracy for play/pause/seek operations across all connected clients.',
-      tags: ['WebSocket', 'Real-time', 'Video Streaming', 'Node.js'],
+      description: 'Created an admin panel for library operations — view all enrolled students, identify fee defaulters at a glance, and drill into individual records. Replaced hours of manual tracking with a single dashboard.',
+      tags: ['Dashboard', 'CRUD', 'Reporting', 'Management'],
       color: '#7cb342',
-      link: 'https://github.com/byte-void/watch_party'
+      link: 'https://thekingslibrary.in/'
     },
     {
       id: 4,
-      title: 'EasyED (Mobile App)',
-      category: 'mobile',
-      description: 'Automatic counselling system designed using React Native technology. The application sends reports to parents at month-end. This project was showcased in GFG HackerFest where I secured 2nd rank. Available on PlayStore.',
-      tags: ['React Native', 'Mobile App', 'Education'],
+      title: 'Rajat XP Portfolio',
+      category: 'web',
+      description: 'This Windows XP–themed portfolio site — built with React and Vite to showcase my library project and journey into software development in a memorable, interactive way.',
+      tags: ['React', 'Vite', 'Portfolio', 'UI/UX'],
       color: '#9c27b0',
-      link: null
-    },
-    {
-      id: 5,
-      title: 'Smart Truck Routing Solution',
-      category: 'ai',
-      description: 'Winner (2025) and Runner up (2024) at Smart India Hackathon by Govt of India. Designed a smart truck routing solution optimizing routes by goods availability, improving vehicle utilization by 30%.',
-      tags: ['AI', 'Optimization', 'Hackathon Winner', 'Logistics'],
-      color: '#ff9800',
-      link: null
-    },
-    {
-      id: 6,
-      title: 'Node Module (Published on NPM)',
-      category: 'tools',
-      description: 'Published my own node-module on npm for the developer community.',
-      tags: ['NPM', 'Node.js', 'Open Source'],
-      color: '#00bcd4',
-      link: null
-    },
-    {
-      id: 7,
-      title: 'Extension Service',
-      category: 'tools',
-      description: 'Created my own extension for controlling the speed of any video. Used it to increase Youtube video speed beyond 2X for learning purpose.',
-      tags: ['Browser Extension', 'Chrome Extension', 'Productivity'],
-      color: '#e91e63',
       link: null
     }
   ]
 
   const filters = [
     { id: 'all', label: 'All Projects' },
-    { id: 'ai', label: 'AI & Automation' },
-    { id: 'web', label: 'Web Development' },
-    { id: 'mobile', label: 'Mobile App' },
-    { id: 'tools', label: 'Tools & Extensions' }
+    { id: 'web', label: 'Web Development' }
   ]
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(p => p.category === activeFilter)
 
   return (
     <div className="content-wrapper projects-content">
-      {/* Header */}
       <div className="projects-header">
         <h1>My Projects</h1>
-        <p>A collection of projects showcasing my development expertise and achievements</p>
+        <p>Real software built to solve real problems — starting with my own library</p>
       </div>
 
-      {/* Filters */}
       <div className="projects-filters">
         {filters.map(filter => (
           <button
@@ -103,11 +71,10 @@ const ProjectsContent = () => {
         ))}
       </div>
 
-      {/* Projects Grid */}
       <div className="projects-grid">
         {filteredProjects.map(project => (
           <div key={project.id} className="project-card">
-            <div 
+            <div
               className="project-thumbnail"
               style={{ backgroundColor: project.color }}
             >
@@ -129,9 +96,9 @@ const ProjectsContent = () => {
               </div>
             </div>
             {project.link ? (
-              <a 
-                href={project.link} 
-                target="_blank" 
+              <a
+                href={project.link}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="project-view-btn"
                 style={{ textDecoration: 'none', display: 'block' }}
@@ -145,23 +112,22 @@ const ProjectsContent = () => {
         ))}
       </div>
 
-      {/* Stats */}
       <div className="projects-stats">
         <div className="stat">
-          <span className="stat-number">4+</span>
-          <span className="stat-label">Years Experience</span>
-        </div>
-        <div className="stat">
-          <span className="stat-number">1000+</span>
-          <span className="stat-label">DSA Problems Solved</span>
+          <span className="stat-number">1</span>
+          <span className="stat-label">Live Production App</span>
         </div>
         <div className="stat">
           <span className="stat-number">2</span>
-          <span className="stat-label">Hackathon Wins</span>
+          <span className="stat-label">User Roles Built</span>
         </div>
         <div className="stat">
-          <span className="stat-number">1M+</span>
-          <span className="stat-label">Users Supported</span>
+          <span className="stat-number">100%</span>
+          <span className="stat-label">Self-Built & Deployed</span>
+        </div>
+        <div className="stat">
+          <span className="stat-number">📚</span>
+          <span className="stat-label">Real Library Users</span>
         </div>
       </div>
     </div>

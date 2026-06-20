@@ -91,10 +91,10 @@ const ContactContent = () => {
 
   const contactInfo = [
     {
-      icon: '📧',
-      label: 'Email',
-      value: 'devsamm72@gmail.com',
-      link: 'mailto:devsamm72@gmail.com'
+      icon: '🌐',
+      label: 'Library Website',
+      value: 'thekingslibrary.in',
+      link: 'https://thekingslibrary.in/'
     },
     {
       icon: '📱',
@@ -109,16 +109,10 @@ const ContactContent = () => {
       link: null
     },
     {
-      icon: '💻',
-      label: 'GitHub',
-      value: 'github.com/samm-developer',
-      link: 'https://github.com/samm-developer'
-    },
-    {
-      icon: '💻',
-      label: 'GitHub',
-      value: 'github.com/byte-void',
-      link: 'https://github.com/byte-void'
+      icon: '📚',
+      label: 'The King\'s Library',
+      value: 'Library Management System',
+      link: 'https://thekingslibrary.in/'
     },
   ]
 
