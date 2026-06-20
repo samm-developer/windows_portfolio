@@ -12,7 +12,7 @@
   width: 100%;
   height: 100%;
   /* Custom desktop background image */
-  background-image: url('../../assets/sam-background.png');
+  background-image: url('../../assets/raj-background.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -34,7 +34,7 @@
 @media (max-width: 768px) {
   .desktop-background {
     /* Mobile-specific background (Rajat mobile image) */
-    background-image: url('../../assets/sam-mobile.png');
+    background-image: url('../../assets/raj-mobile.png');
     background-position: center top;
   }
 
