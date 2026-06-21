@@ -19,7 +19,6 @@ const ContactContent = () => {
     const { name, value } = e.target
 
     if (name === 'phone') {
-      // Allow only digits; show error if any non-digit character is present
       if (!/^[0-9]*$/.test(value)) {
         setPhoneError('Phone number must contain digits only')
       } else {
@@ -37,13 +36,11 @@ const ContactContent = () => {
     e.preventDefault()
     setError('')
 
-    // Require at least one contact method: email or phone
     if (!formData.email && !formData.phone) {
       setError('Please provide either an email address or a phone number')
       return
     }
 
-    // If phone is filled, ensure it is digits only
     if (formData.phone && !/^[0-9]+$/.test(formData.phone)) {
       setPhoneError('Phone number must contain digits only')
       return
@@ -91,40 +88,50 @@ const ContactContent = () => {
 
   const contactInfo = [
     {
-      icon: '🌐',
-      label: 'Library Website',
-      value: 'thekingslibrary.in',
-      link: 'https://thekingslibrary.in/'
+      icon: '📧',
+      label: 'Email',
+      value: 'rajatdeveloper2000@gmail.com',
+      link: 'mailto:rajatdeveloper2000@gmail.com'
     },
     {
       icon: '📱',
       label: 'Phone',
-      value: '9452392955',
-      link: 'tel:9452392955'
+      value: '7355904515',
+      link: 'tel:7355904515'
     },
     {
       icon: '📍',
       label: 'Location',
-      value: 'India',
+      value: 'Delhi, India',
       link: null
     },
     {
-      icon: '📚',
-      label: 'The King\'s Library',
-      value: 'Library Management System',
+      icon: '💻',
+      label: 'GitHub',
+      value: 'github.com/samm-developer',
+      link: 'https://github.com/samm-developer'
+    },
+    {
+      icon: '🔗',
+      label: 'LinkedIn',
+      value: 'rajat-kumar-keshari',
+      link: 'https://www.linkedin.com/in/rajat-kumar-keshari-201524218/'
+    },
+    {
+      icon: '🌐',
+      label: 'Library Website',
+      value: 'thekingslibrary.in',
       link: 'https://thekingslibrary.in/'
     },
   ]
 
   return (
     <div className="content-wrapper contact-content">
-      {/* Header */}
       <div className="contact-header">
         <h1>Get In Touch</h1>
       </div>
 
       <div className="contact-body">
-        {/* Contact Form */}
         <div className="contact-form-section">
           <h3>Send a Message</h3>
           {error && (
@@ -136,7 +143,7 @@ const ContactContent = () => {
             <div className="success-message">
               <span className="success-icon">✅</span>
               <h4>Message Sent!</h4>
-              <p>Thank you for reaching out. I'll get back to you soon.</p>
+              <p>Thank you for reaching out. I&apos;ll get back to you soon.</p>
             </div>
           ) : (
             <form className="contact-form" onSubmit={handleSubmit}>
@@ -212,7 +219,6 @@ const ContactContent = () => {
           )}
         </div>
 
-        {/* Contact Info */}
         <div className="contact-info-section">
           <h3>Contact Info</h3>
           <div className="contact-cards">
@@ -232,7 +238,6 @@ const ContactContent = () => {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </div>

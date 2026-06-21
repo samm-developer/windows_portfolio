@@ -9,34 +9,34 @@ const ProjectsContent = () => {
       id: 1,
       title: "The King's Library",
       category: 'web',
-      description: 'A live library management system I built for my own library. Students register, sign in, reserve study hours, and pay ₹100/hour or monthly fees online. Admins get a dashboard to view all students, track fee defaulters, and inspect any record — all in one place.',
-      tags: ['React', 'Full-Stack', 'Payments', 'Admin Panel', 'Live Product'],
+      description: 'Full-stack library management system built from scratch. Features real-time seat allocation with MongoDB transactions, secure auth with access/refresh tokens, book rental & purchase module, Razorpay & PhonePe payments, and a RabbitMQ notification microservice for payment confirmations and booking alerts.',
+      tags: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'RabbitMQ', 'Live Product'],
       color: '#ff6b35',
       link: 'https://thekingslibrary.in/'
     },
     {
       id: 2,
-      title: 'Student Portal & Auth',
+      title: 'SyncStream',
       category: 'web',
-      description: 'Built the student-facing side of the library platform — registration with personal details, secure login, and a streamlined flow for reserving study hours and paying fees without manual paperwork.',
-      tags: ['Authentication', 'User Flows', 'Web App'],
+      description: 'Real-time collaborative video platform with synchronized YouTube playback for multiple users. Built with Socket.io, Node.js, and React — achieving sub-second sync accuracy using timestamp-based latency compensation and a scalable client–server architecture.',
+      tags: ['Socket.io', 'React', 'Node.js', 'Real-time', 'WebSocket'],
       color: '#42a5f5',
-      link: 'https://thekingslibrary.in/'
+      link: 'https://github.com/samm-developer/Watch-Party'
     },
     {
       id: 3,
-      title: 'Admin Dashboard',
+      title: 'YouTube Clone',
       category: 'web',
-      description: 'Created an admin panel for library operations — view all enrolled students, identify fee defaulters at a glance, and drill into individual records. Replaced hours of manual tracking with a single dashboard.',
-      tags: ['Dashboard', 'CRUD', 'Reporting', 'Management'],
+      description: 'Video streaming platform with optimized search using debouncing and caching — reducing API calls by 98%. Features nested comments via recursive components, live chat simulation, YouTube Data API v3 integration, and a responsive Tailwind CSS UI.',
+      tags: ['React', 'Redux Toolkit', 'Tailwind CSS', 'API Integration'],
       color: '#7cb342',
-      link: 'https://thekingslibrary.in/'
+      link: 'https://github.com/samm-developer/YT_Srch-Nstd_Cmnt'
     },
     {
       id: 4,
       title: 'Rajat XP Portfolio',
       category: 'web',
-      description: 'This Windows XP–themed portfolio site — built with React and Vite to showcase my library project and journey into software development in a memorable, interactive way.',
+      description: 'This Windows XP–themed portfolio site — built with React and Vite to showcase my projects, experience, and skills in an interactive, memorable way.',
       tags: ['React', 'Vite', 'Portfolio', 'UI/UX'],
       color: '#9c27b0',
       link: null
@@ -56,7 +56,7 @@ const ProjectsContent = () => {
     <div className="content-wrapper projects-content">
       <div className="projects-header">
         <h1>My Projects</h1>
-        <p>Real software built to solve real problems — starting with my own library</p>
+        <p>Production apps and personal projects — from library management to real-time video sync</p>
       </div>
 
       <div className="projects-filters">
@@ -114,20 +114,20 @@ const ProjectsContent = () => {
 
       <div className="projects-stats">
         <div className="stat">
+          <span className="stat-number">500+</span>
+          <span className="stat-label">DSA Problems Solved</span>
+        </div>
+        <div className="stat">
+          <span className="stat-number">40%</span>
+          <span className="stat-label">Load Time Reduced</span>
+        </div>
+        <div className="stat">
+          <span className="stat-number">98%</span>
+          <span className="stat-label">Fewer API Calls</span>
+        </div>
+        <div className="stat">
           <span className="stat-number">1</span>
           <span className="stat-label">Live Production App</span>
-        </div>
-        <div className="stat">
-          <span className="stat-number">2</span>
-          <span className="stat-label">User Roles Built</span>
-        </div>
-        <div className="stat">
-          <span className="stat-number">100%</span>
-          <span className="stat-label">Self-Built & Deployed</span>
-        </div>
-        <div className="stat">
-          <span className="stat-number">📚</span>
-          <span className="stat-label">Real Library Users</span>
         </div>
       </div>
     </div>

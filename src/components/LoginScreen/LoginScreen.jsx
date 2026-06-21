@@ -50,7 +50,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <span className="ivin">Developer</span>
               <span className="xp">XP</span>
             </div>
-            <div className="visual-designer-subtitle">Software Developer</div>
+            <div className="visual-designer-subtitle">Software Developer · NIT Student</div>
           </div>
           
           <p className="login-instruction">
@@ -103,7 +103,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
             </div>
             <div className="user-info">
               <span className="user-name">RAJAT</span>
-              <span className="user-role">Software Developer</span>
+              <span className="user-role">Software Developer · NIT Student</span>
             </div>
           </button>
         </div>
@@ -148,7 +148,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
             </div>
             
             {/* Subtitle */}
-            <div className="xp-loading-subtitle">Software Developer</div>
+            <div className="xp-loading-subtitle">Software Developer · NIT Student</div>
             
             {/* Progress Bar */}
             <div className="xp-progress-container">

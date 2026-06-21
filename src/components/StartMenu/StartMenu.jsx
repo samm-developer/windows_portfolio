@@ -4,9 +4,9 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
   if (!isOpen) return null
 
   const menuItems = [
-    { id: 'about', title: 'About Me', description: 'Learn more about Rajat' },
-    { id: 'resume', title: 'My Resume', description: 'View professional experience' },
-    { id: 'projects', title: 'My Projects', description: 'Browse portfolio work' },
+    { id: 'about', title: 'About Me', description: 'Software Developer & NIT Student' },
+    { id: 'resume', title: 'My Resume', description: 'Download Rajat Keshari CV' },
+    { id: 'projects', title: 'My Projects', description: 'Library app, SyncStream & more' },
     { id: 'contact', title: 'Contact Me', description: 'Get in touch' },
   ]
 
@@ -116,18 +116,30 @@ const StartMenu = ({ isOpen, onClose, onOpenWindow, onLogout }) => {
             The King&apos;s Library
           </a>
           <a
-            href="https://thekingslibrary.in/"
+            href="https://github.com/samm-developer"
             target="_blank"
             rel="noopener noreferrer"
             className="menu-link"
           >
             <svg viewBox="0 0 24 24" className="link-icon">
-              <rect x="4" y="2" width="16" height="20" rx="2" fill="#ffc859"/>
-              <line x1="8" y1="7" x2="16" y2="7" stroke="#333" strokeWidth="1.5"/>
-              <line x1="8" y1="11" x2="16" y2="11" stroke="#666" strokeWidth="1"/>
-              <line x1="8" y1="15" x2="13" y2="15" stroke="#666" strokeWidth="1"/>
+              <circle cx="12" cy="12" r="10" fill="#333"/>
+              <path d="M12 2 C6.5 2 2 6.5 2 12 C2 16.5 5 20 9 21 L9 18 C7 18.5 6.5 17 6.5 17 C6 16 5.5 15.5 5.5 15.5 C4.5 15 5.5 15 5.5 15 C6.5 15 7 16 7 16 C8 17.5 9.5 17 10 16.5 C10 16 10.5 15.5 10.5 15 C8 14.5 5 13.5 5 10 C5 9 5.5 8 6 7.5 C6 7 5.5 6 6 5 C6 5 7 5 8.5 6 C9 6 10 5.5 12 5.5 C14 5.5 15 6 15.5 6 C17 5 18 5 18 5 C18.5 6 18 7 18 7.5 C18.5 8 19 9 19 10 C19 13.5 16 14.5 13.5 15 C14 15.5 14 16 14 17 L14 21 C18 20 22 16.5 22 12 C22 6.5 17.5 2 12 2" fill="#fff"/>
             </svg>
-            Library App (Live)
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rajat-kumar-keshari-201524218/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="menu-link"
+          >
+            <svg viewBox="0 0 24 24" className="link-icon">
+              <rect x="2" y="2" width="20" height="20" rx="3" fill="#0077b5"/>
+              <rect x="5" y="9" width="3" height="10" fill="#fff"/>
+              <circle cx="6.5" cy="6.5" r="1.5" fill="#fff"/>
+              <path d="M11 9 L11 19 M11 12 C11 10.5 12 9.5 13.5 9.5 C15 9.5 16 10.5 16 12.5 L16 19" stroke="#fff" strokeWidth="2" fill="none"/>
+            </svg>
+            LinkedIn
           </a>
         </div>
       </div>

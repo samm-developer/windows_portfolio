@@ -3,7 +3,6 @@ import './ContentStyles.css'
 const AboutMeContent = () => {
   return (
     <div className="content-wrapper about-content">
-      {/* Header Section */}
       <div className="content-header">
         <div className="profile-section">
           <div className="profile-avatar-large">
@@ -26,85 +25,121 @@ const AboutMeContent = () => {
             </svg>
           </div>
           <div className="profile-info">
-            <h1>RAJAT</h1>
-            <h2>Library Owner · Aspiring Software Developer</h2>
+            <h1>RAJAT KESHARI</h1>
+            <h2>Software Developer · NIT Student</h2>
             <p className="tagline">
-              I run <span className="highlight-years">The King&apos;s Library</span> and built a full library management platform from scratch — now looking to bring that hands-on product experience to a software development role.
+              Resourceful developer with expertise in scalable system design — built a full-stack library management platform from scratch and reduced load times by up to <span className="highlight-years">40%</span> through performance-driven engineering.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="content-body">
         <section className="about-section">
           <h3>👋 Hello!</h3>
           <p>
-            I&apos;m Rajat, owner of The King&apos;s Library. When managing students, study hours, and monthly fees became overwhelming on paper, I taught myself to build software that could handle it all. The result is{' '}
-            <a href="https://thekingslibrary.in/" target="_blank" rel="noopener noreferrer">thekingslibrary.in</a>
-            — a live library management system where students register, book study hours, pay fees online, and admins track everything from one dashboard.
+            I&apos;m Rajat Keshari, a Software Developer and M.Tech (Computer Science) student at NIT Jalandhar. I own and operate{' '}
+            <a href="https://thekingslibrary.in/" target="_blank" rel="noopener noreferrer">The King&apos;s Library</a>
+            , where I built a production library management system from the ground up — handling seat reservations, book rentals, online payments, and admin operations for real students every day.
           </p>
           <p>
-            Building this product end-to-end gave me real experience in web development, user flows, payments, and admin tooling. I&apos;m now actively seeking a software developer position where I can keep growing while contributing to meaningful products.
+            I design robust, scalable architectures with a focus on performance, reliability, and maintainability. From real-time seat allocation with MongoDB transactions to RabbitMQ-based notification microservices, I enjoy solving complex problems end-to-end.
           </p>
         </section>
 
         <section className="about-section">
-          <h3>🎯 What I&apos;ve Built & Done</h3>
+          <h3>💼 Work Experience</h3>
           <ul className="skills-list">
             <li>
               <span className="skill-icon">📚</span>
               <div>
-                <strong>The King&apos;s Library — Management System</strong>
-                <p>Designed and deployed a production web app for student registration, login, hourly/monthly fee payments, and a full admin panel to view students, track defaulters, and inspect records.</p>
-              </div>
-            </li>
-            <li>
-              <span className="skill-icon">🏛️</span>
-              <div>
-                <strong>Library Operations</strong>
-                <p>Run a physical library serving students daily — understanding real user needs before writing a single line of code.</p>
-              </div>
-            </li>
-            <li>
-              <span className="skill-icon">💳</span>
-              <div>
-                <strong>Online Payments</strong>
-                <p>Integrated online fee collection so students can pay ₹100/hour or monthly fees digitally, reducing manual follow-ups.</p>
-              </div>
-            </li>
-            <li>
-              <span className="skill-icon">🖥️</span>
-              <div>
-                <strong>This Portfolio</strong>
-                <p>Built this Windows XP–themed portfolio site to showcase my work and journey into software development.</p>
-              </div>
-            </li>
-            <li>
-              <span className="skill-icon">🚀</span>
-              <div>
-                <strong>Product Ownership</strong>
-                <p>Handled everything from idea to deployment — requirements, UI, development, testing, and ongoing maintenance for real users.</p>
+                <strong>Software Developer (Owner) — The King&apos;s Library</strong>
+                <p>Apr 2023 – Jul 2025 · <a href="https://thekingslibrary.in/" target="_blank" rel="noopener noreferrer">thekingslibrary.in</a></p>
+                <p>Developed a full-stack Library Management System with React.js, TypeScript, Express.js, Node.js, and MongoDB. Built real-time seat allocation with transactions, secure auth with access/refresh tokens, book rental/purchase module, Razorpay &amp; PhonePe payments, and a RabbitMQ notification microservice.</p>
               </div>
             </li>
           </ul>
         </section>
 
         <section className="about-section">
-          <h3>📖 Background</h3>
+          <h3>🎯 Key Achievements</h3>
           <ul className="skills-list">
             <li>
-              <span className="skill-icon">📚</span>
+              <span className="skill-icon">⚡</span>
               <div>
-                <strong>Founder & Owner — The King&apos;s Library</strong>
-                <p>Operating a student-focused library and building the digital tools needed to run it efficiently at scale.</p>
+                <strong>Performance Optimization</strong>
+                <p>Reduced load times by up to 40% through state management and API optimization. Improved search response latency by 60% using debouncing, throttling, and Redux Toolkit.</p>
+              </div>
+            </li>
+            <li>
+              <span className="skill-icon">🔒</span>
+              <div>
+                <strong>Real-Time Seat Allocation</strong>
+                <p>Designed automatic seat allocation with MongoDB transactions and rollback to prevent booking conflicts and manage occupancy efficiently.</p>
               </div>
             </li>
             <li>
               <span className="skill-icon">💻</span>
               <div>
-                <strong>Self-Taught Developer</strong>
-                <p>Learned web development by solving my own business problems — building software with real users and real stakes from day one.</p>
+                <strong>DSA Practice</strong>
+                <p>Solved 500+ DSA problems on CodeChef, GeeksforGeeks, and LeetCode — strengthening logic building and algorithmic thinking.</p>
+              </div>
+            </li>
+            <li>
+              <span className="skill-icon">📨</span>
+              <div>
+                <strong>Async Notification System</strong>
+                <p>Integrated RabbitMQ microservice for asynchronous payment confirmations, fee reminders, and booking notification emails.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h3>📚 Education</h3>
+          <ul className="skills-list">
+            <li>
+              <span className="skill-icon">🎓</span>
+              <div>
+                <strong>M.Tech (Computer Science) — NIT Jalandhar</strong>
+                <p>Jul 2025 – Present · 74% · Machine Learning, Advanced Computer Networks, Data Structures &amp; Analysis, Operating Systems, Cryptography</p>
+              </div>
+            </li>
+            <li>
+              <span className="skill-icon">🎓</span>
+              <div>
+                <strong>B.Tech (Computer Science) — B.I.E.T Jhansi</strong>
+                <p>Jul 2019 – Apr 2023 · 74% · Web Development, DBMS, Operating Systems, Compiler Design, Computer Networks, OOPs</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h3>🏅 Certifications</h3>
+          <ul className="skills-list">
+            <li>
+              <span className="skill-icon">🛡️</span>
+              <div>
+                <strong>Cyber Job Simulation — Deloitte</strong>
+              </div>
+            </li>
+            <li>
+              <span className="skill-icon">📊</span>
+              <div>
+                <strong>Graph Theory Programming Camp</strong>
+              </div>
+            </li>
+            <li>
+              <span className="skill-icon">💡</span>
+              <div>
+                <strong>Introduction to C++ &amp; Data Structures in C++ — Coding Ninjas</strong>
+              </div>
+            </li>
+            <li>
+              <span className="skill-icon">📝</span>
+              <div>
+                <strong>C Language — LearnVern</strong>
               </div>
             </li>
           </ul>
@@ -117,10 +152,11 @@ const AboutMeContent = () => {
             <h4>Frontend</h4>
             <div className="tools-grid">
               <div className="tool-item">React.js</div>
+              <div className="tool-item">Next.js</div>
               <div className="tool-item">JavaScript</div>
-              <div className="tool-item">HTML & CSS</div>
-              <div className="tool-item">Responsive UI</div>
-              <div className="tool-item">Vite</div>
+              <div className="tool-item">TypeScript</div>
+              <div className="tool-item">Redux Toolkit</div>
+              <div className="tool-item">Tailwind CSS</div>
             </div>
           </div>
 
@@ -128,29 +164,32 @@ const AboutMeContent = () => {
             <h4>Backend & APIs</h4>
             <div className="tools-grid">
               <div className="tool-item">Node.js</div>
+              <div className="tool-item">Express.js</div>
+              <div className="tool-item">MERN Stack</div>
               <div className="tool-item">REST APIs</div>
-              <div className="tool-item">Authentication</div>
-              <div className="tool-item">Payment Integration</div>
+              <div className="tool-item">GraphQL</div>
+              <div className="tool-item">Socket.io</div>
+              <div className="tool-item">RabbitMQ</div>
             </div>
           </div>
 
           <div className="tools-category">
-            <h4>Database & Deployment</h4>
+            <h4>Database & Cloud</h4>
             <div className="tools-grid">
-              <div className="tool-item">Database Design</div>
-              <div className="tool-item">CRUD Operations</div>
-              <div className="tool-item">Production Deployment</div>
-              <div className="tool-item">Domain & Hosting</div>
+              <div className="tool-item">MongoDB</div>
+              <div className="tool-item">AWS</div>
+              <div className="tool-item">Query Optimization</div>
+              <div className="tool-item">Indexing</div>
             </div>
           </div>
 
           <div className="tools-category">
-            <h4>Product & Admin</h4>
+            <h4>Payments & Integrations</h4>
             <div className="tools-grid">
-              <div className="tool-item">Admin Dashboards</div>
-              <div className="tool-item">User Management</div>
-              <div className="tool-item">Fee Tracking</div>
-              <div className="tool-item">Reporting</div>
+              <div className="tool-item">Razorpay</div>
+              <div className="tool-item">PhonePe</div>
+              <div className="tool-item">YouTube IFrame API</div>
+              <div className="tool-item">YouTube Data API v3</div>
             </div>
           </div>
         </section>
