@@ -90,8 +90,8 @@ const ContactContent = () => {
     {
       icon: '📧',
       label: 'Email',
-      value: 'rajatdeveloper2000@gmail.com',
-      link: 'mailto:rajatdeveloper2000@gmail.com'
+      value: '60rajatkeshri@gmail.com',
+      link: 'mailto:60rajatkeshri@gmail.com'
     },
     {
       icon: '📱',
