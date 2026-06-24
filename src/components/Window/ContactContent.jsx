@@ -85,6 +85,7 @@ const ContactContent = () => {
       setIsSending(false)
     }
   }
+  
 
   const contactInfo = [
     {
