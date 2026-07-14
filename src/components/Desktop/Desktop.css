@@ -33,7 +33,7 @@
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .desktop-background {
-    /* Mobile-specific background (SAM mobile image) */
+    /* Mobile-specific background (Shashwat mobile image) */
     background-image: url('../../assets/sam-mobile.png');
     background-position: center top;
   }

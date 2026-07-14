@@ -46,7 +46,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <div className="flag-piece yellow"></div>
             </div>
             <div className="logo-text">
-              <span className="mitch">SAM</span>
+              <span className="mitch">Shashwat</span>
               <span className="ivin">Developer</span>
               <span className="xp">XP</span>
             </div>
@@ -54,7 +54,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
           </div>
           
           <p className="login-instruction">
-            To begin, click on SAM to log in
+            To begin, click on Shashwat to log in
           </p>
         </div>
         
@@ -102,7 +102,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               </div>
             </div>
             <div className="user-info">
-              <span className="user-name">SAM</span>
+              <span className="user-name">Shashwat</span>
               <span className="user-role">Senior Software Developer</span>
             </div>
           </button>
@@ -120,11 +120,11 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
               <rect x="13" y="13" width="7" height="7" fill="#ffca28"/>
             </svg>
           </div>
-          <span>Restart SAM XP</span>
+          <span>Restart Shashwat XP</span>
         </button>
         
         <div className="login-footer-text">
-          <p>Click on Sam to login and explore the vintage windows.</p>
+          <p>Click on Shashwat to login and explore the vintage windows.</p>
           {!isMobile && <p>Every detail has been designed with a purpose.</p>}
         </div>
       </div>
@@ -143,7 +143,7 @@ const LoginScreen = ({ onLogin, onRestart, isLoading }) => {
             
             {/* Title */}
             <div className="xp-loading-title">
-              <span className="xp-title-main">SAM</span>
+              <span className="xp-title-main">Shashwat</span>
               <span className="xp-title-suffix">xp</span>
             </div>
             
