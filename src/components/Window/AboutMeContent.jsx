@@ -39,7 +39,7 @@ const AboutMeContent = () => {
             <h1>Shashwat</h1>
             <h2>Senior Software Developer (SDE-2)</h2>
             <p className="tagline">
-              Building scalable, high-performance web applications with <span className="highlight-years">4+ years</span> of experience using React, Next.js, Node.js, and AWS.
+              Building scalable, high-performance web applications with <span className="highlight-years">almost 5 years</span> of experience using React, Next.js, Node.js, JAVA, Spring Boot and AWS.
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ const AboutMeContent = () => {
         <section className="about-section">
           <h3>👋 Hello!</h3>
           <p>
-            I’m a Senior Software Development Engineer with a strong foundation in building clean, scalable, and user centric systems. I bring hands on experience designing and shipping reliable, maintainable applications, with a focus on writing high-quality code and making sound architectural decisions. I’m comfortable owning features end-to-end, collaborating across teams, and balancing technical trade-offs to deliver long-term value. With a passion for intuitive UX, I enjoy blending thoughtful design with solid engineering to create software that is both robust and delightful to use.
+            I’m a Senior Software Development Engineer with a strong foundation in building clean, scalable, and user centric systems. I bring hands on experience designing and shipping reliable, maintainable applications, with a focus on writing high-quality code and making sound architectural decisions. I’m comfortable owning features end-to-end, mentoring developers, collaborating with US, UK, France, and UAE clients and balancing technical trade-offs to deliver long-term value. With a passion for intuitive UX, I enjoy blending thoughtful design with solid engineering to create software that is both robust and delightful to use.
           </p>
         </section>
 
@@ -75,7 +75,7 @@ const AboutMeContent = () => {
               <span className="skill-icon">💻</span>
               <div>
                 <strong>DSA Expertise</strong>
-                <p>Solved 1000+ DSA problems on LeetCode and GFG, strengthening logic building and algorithmic thinking</p>
+                <p>Solved 1000+ DSA problems on LeetCode and GFG, strengthening logic building, algorithmic thinking, and time-space complexity optimization</p>
               </div>
             </li>
             <li>
@@ -102,7 +102,7 @@ const AboutMeContent = () => {
               <span className="skill-icon">🎓</span>
               <div>
                 <strong>B.Tech (Computer Science and Engineering)</strong>
-                <p>77% (Pass with Distinction)</p>
+                <p>78% (Pass with Distinction)</p>
               </div>
             </li>
             <li>
@@ -130,15 +130,18 @@ const AboutMeContent = () => {
             <div className="tools-grid">
               <div className="tool-item">React.js</div>
               <div className="tool-item">Next.js</div>
+              <div className="tool-item">Angular</div>
               <div className="tool-item">Micro Frontend</div>
               <div className="tool-item">React-Native</div>
               <div className="tool-item">Redux</div>
               <div className="tool-item">Payment-Gateway</div>
               <div className="tool-item">SSR</div>
               <div className="tool-item">CSR</div>
+              <div className="tool-item">SWR</div>
               <div className="tool-item">Material UI</div>
               <div className="tool-item">Tailwind CSS</div>
               <div className="tool-item">React Hook</div>
+              <div className="tool-item">Framer Motion</div>
             </div>
           </div>
 
@@ -146,6 +149,10 @@ const AboutMeContent = () => {
             <h4>Backend Technology</h4>
             <div className="tools-grid">
               <div className="tool-item">Node.js</div>
+              <div className="tool-item">Nest.js</div>
+              <div className="tool-item">JAVA</div>
+              <div className="tool-item">Python</div>
+              <div className="tool-item">Spring Boot</div>
               <div className="tool-item">Micro Services</div>
               <div className="tool-item">GraphQL</div>
               <div className="tool-item">RabbitMQ</div>
@@ -157,6 +164,7 @@ const AboutMeContent = () => {
               <div className="tool-item">REST API</div>
               <div className="tool-item">Caching</div>
               <div className="tool-item">Socket.io</div>
+              <div className="tool-item">Multer</div>
             </div>
           </div>
 
@@ -169,6 +177,7 @@ const AboutMeContent = () => {
               <div className="tool-item">Docker</div>
               <div className="tool-item">Jenkins</div>
               <div className="tool-item">Lambda</div>
+              <div className="tool-item">SES</div>
               <div className="tool-item">Putty</div>
               <div className="tool-item">CI/CD</div>
             </div>
@@ -179,6 +188,7 @@ const AboutMeContent = () => {
             <div className="tools-grid">
               <div className="tool-item">JavaScript</div>
               <div className="tool-item">TypeScript</div>
+              <div className="tool-item">Java</div>
               <div className="tool-item">Python</div>
               <div className="tool-item">C</div>
               <div className="tool-item">C++</div>
@@ -195,6 +205,26 @@ const AboutMeContent = () => {
               <div className="tool-item">Indexing</div>
               <div className="tool-item">Schema Design</div>
               <div className="tool-item">ACID</div>
+            </div>
+          </div>
+
+          <div className="tools-category">
+            <h4>Tools</h4>
+            <div className="tools-grid">
+              <div className="tool-item">Elasticsearch</div>
+              <div className="tool-item">Dynatrace</div>
+              <div className="tool-item">Citrix</div>
+              <div className="tool-item">SonarQube</div>
+              <div className="tool-item">PgAdmin</div>
+              <div className="tool-item">JIRA</div>
+              <div className="tool-item">Confluence</div>
+              <div className="tool-item">ZScalar</div>
+              <div className="tool-item">VMware</div>
+              <div className="tool-item">Postman</div>
+              <div className="tool-item">Git</div>
+              <div className="tool-item">Swagger</div>
+              <div className="tool-item">Chrome DevTools</div>
+              <div className="tool-item">Figma</div>
             </div>
           </div>
         </section>

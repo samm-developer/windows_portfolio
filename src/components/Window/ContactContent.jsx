@@ -93,20 +93,26 @@ const ContactContent = () => {
     {
       icon: '📧',
       label: 'Email',
-      value: 'devsamm72@gmail.com',
-      link: 'mailto:devsamm72@gmail.com'
+      value: 'itsmeitself7777@gmail.com',
+      link: 'mailto:itsmeitself777@gmail.com'
     },
     {
       icon: '📱',
       label: 'Phone',
-      value: '9452392955',
-      link: 'tel:9452392955'
+      value: '7007032590',
+      link: 'tel:7007032590'
     },
     {
       icon: '📍',
       label: 'Location',
       value: 'India',
       link: null
+    },
+    {
+      icon: '🌐',
+      label: 'Website',
+      value: 'sam-p.netlify.app',
+      link: 'https://sam-p.netlify.app'
     },
     {
       icon: '💻',
