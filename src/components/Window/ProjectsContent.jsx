@@ -28,7 +28,7 @@ const ProjectsContent = () => {
       title: 'WatchParty',
       category: 'web',
       description: 'Developed realtime collaborative video streaming platform using React.js, Node.js, Socket.IO, WebSockets and YouTube IFrame Player API, enabling synchronised YouTube playback for multiple users. Implemented timestamp-based latency compensation and event-driven WebSocket message handling, achieving sub-second accuracy for play/pause/seek operations across all connected clients.',
-      tags: ['React.js', 'Socket.IO', 'WebSocket', 'Node.js'],
+      tags: ['React.js', 'Node.js', 'Socket.IO', 'WebSocket'],
       color: '#7cb342',
       link: 'https://github.com/byte-void/watch_party'
     },
