@@ -9,8 +9,8 @@ const ProjectsContent = () => {
       id: 1,
       title: 'SmartTicket Assigner (AI + Automation)',
       category: 'ai',
-      description: 'Designed and implemented a system that reads incoming tickets and extracts required technologies using natural language processing (NLP). Created a dynamic skill-matching algorithm to identify team members who possess the relevant expertise. Built an automated ticket assignment engine that assigns tasks to the most suitable person based on skills, availability, and workload.',
-      tags: ['AI', 'NLP', 'Automation', 'Python'],
+      description: 'Designed and developed a Python based AI microservice using FastAPI, NLP, REST APIs and Postgres to analyse incoming tickets, extract technologies and integrate with a Node.js backend for intelligent task assignment. Created a dynamic skill-matching algorithm to identify team members by expertise and availability, then built an automated routing engine for scalable, low-latency ticket assignment.',
+      tags: ['AI', 'NLP','Python', 'FastAPI', 'Postgres', 'Automation'],
       color: '#ff6b35',
       link: 'https://github.com/byte-void/Auto-Ticket-Assigning-Agent'
     },
@@ -18,8 +18,8 @@ const ProjectsContent = () => {
       id: 2,
       title: 'PriceWise',
       category: 'web',
-      description: 'A project to solve the problem faced by customers to get the lowest price to compare current price. It shows the customer the lowest price, average price, and current price of any product on Amazon or Flipkart so the customer can compare prices easily, especially during sales.',
-      tags: ['Web App', 'Price Comparison', 'E-commerce'],
+      description: 'Designed and developed a cross-platform price comparison application using Java, Spring Boot, Flutter, REST APIs and MySQL to aggregate prices from e-commerce platforms. It shows the customer the lowest price, average price, and current price of any product on Amazon or Flipkart so the customer can compare prices easily, especially during sales.',
+      tags: ['Java', 'Spring Boot', 'Flutter', 'MySQL'],
       color: '#42a5f5',
       link: 'https://github.com/samm-developer/PriceWise'
     },
@@ -27,8 +27,8 @@ const ProjectsContent = () => {
       id: 3,
       title: 'WatchParty',
       category: 'web',
-      description: 'Developed realtime collaborative video platform enabling synchronised YouTube player for multiple users using WebSocket based architecture (especially for couples). Implemented advanced synchronisation algorithms with timestamp-based latency compensation, achieving sub-second accuracy for play/pause/seek operations across all connected clients.',
-      tags: ['WebSocket', 'Real-time', 'Video Streaming', 'Node.js'],
+      description: 'Developed realtime collaborative video streaming platform using React.js, Node.js, Socket.IO, WebSockets and YouTube IFrame Player API, enabling synchronised YouTube playback for multiple users. Implemented timestamp-based latency compensation and event-driven WebSocket message handling, achieving sub-second accuracy for play/pause/seek operations across all connected clients.',
+      tags: ['React.js', 'Socket.IO', 'WebSocket', 'Node.js'],
       color: '#7cb342',
       link: 'https://github.com/byte-void/watch_party'
     },
@@ -54,8 +54,8 @@ const ProjectsContent = () => {
       id: 6,
       title: 'Node Module (Published on NPM)',
       category: 'tools',
-      description: 'Published my own node-module on npm for the developer community.',
-      tags: ['NPM', 'Node.js', 'Open Source'],
+      description: 'Built my own lightweight node-module on npm, optimized for performance and developer experience. Developed and published an open-source Node.js package providing reusable functionality for React applications with documentation.',
+      tags: ['NPM', 'Node.js', 'React', 'Open Source'],
       color: '#00bcd4',
       link: null
     },
