@@ -148,7 +148,7 @@ const ProjectsContent = () => {
       {/* Stats */}
       <div className="projects-stats">
         <div className="stat">
-          <span className="stat-number">4+</span>
+          <span className="stat-number">5</span>
           <span className="stat-label">Years Experience</span>
         </div>
         <div className="stat">
