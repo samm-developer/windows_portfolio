@@ -4,7 +4,7 @@ import { pdfjs } from 'react-pdf'
 import 'react-pdf/dist/Page/AnnotationLayer.css'
 import 'react-pdf/dist/Page/TextLayer.css'
 import './ContentStyles.css'
-import resumePdf from '../../assets/Sam_CV.pdf'
+import resumePdf from '../../assets/Shashwat_CV.pdf'
 
 // PDF.js worker for react-pdf (required for mobile inline rendering)
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
@@ -43,7 +43,7 @@ const ResumeContent = ({ onOpenContact, isWindowActive }) => {
       const url = window.URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
-      link.download = 'Sam_cv.pdf'
+      link.download = 'Shashwat_CV.pdf'
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -52,7 +52,7 @@ const ResumeContent = ({ onOpenContact, isWindowActive }) => {
       console.error('Error downloading resume:', error)
       const link = document.createElement('a')
       link.href = resumePdf
-      link.download = 'Sam_cv.pdf'
+      link.download = 'Shashwat_CV.pdf'
       link.click()
     }
   }
