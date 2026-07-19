@@ -136,6 +136,8 @@ const AboutMeContent = () => {
               <div className="tool-item">Redux</div>
               <div className="tool-item">Payment-Gateway</div>
               <div className="tool-item">SSR</div>
+              <div className="tool-item">SSG</div>
+              <div className="tool-item">ISR</div>
               <div className="tool-item">CSR</div>
               <div className="tool-item">SWR</div>
               <div className="tool-item">Material UI</div>
@@ -175,6 +177,7 @@ const AboutMeContent = () => {
               <div className="tool-item">EC2</div>
               <div className="tool-item">S3</div>
               <div className="tool-item">Docker</div>
+              <div className="tool-item">Kubernetes</div>
               <div className="tool-item">Jenkins</div>
               <div className="tool-item">Lambda</div>
               <div className="tool-item">SES</div>
